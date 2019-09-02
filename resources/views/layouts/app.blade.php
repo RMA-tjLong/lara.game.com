@@ -43,8 +43,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">登陆</a></li>
-                            <li><a href="{{ route('register') }}">注册</a></li>
+                            <li><a href="{{ route('login') }}">{{ __('language.common.set_in') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ __('language.common.set_up') }}</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -56,7 +56,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            登出
+                                            {{ __('language.common.log_out') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

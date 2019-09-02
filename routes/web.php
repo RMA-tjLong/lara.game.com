@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'zh-CN'])) {
+        \Cookie::queue(\Cookie::forever('lang', $locale));
+    }
+    
+    return back()->withInput();
+});
