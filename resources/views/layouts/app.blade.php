@@ -66,6 +66,16 @@
                                 </ul>
                             </li>
                         @endguest
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                {{ __('language.common.change_lang') }}<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('lang/zh-CN') }}"><img src="{{ asset('image/icons/cn.gif') }}"> {{ __('language.common.zh_cn') }}</a></li>
+                                <li><a href="{{ url('lang/en') }}"><img src="{{ asset('image/icons/en.gif') }}"> {{ __('language.common.en') }}</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

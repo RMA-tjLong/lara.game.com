@@ -7,6 +7,9 @@ return [
 		'set_in'		=> '登陆',
 		'set_up'		=> '注册',
 		'log_out'		=> '登出',
+		'change_lang'	=> '切换语言',
+		'zh_cn'			=> '简体中文',
+		'en'			=> '英语',
 	],
 
 	'login' => [

@@ -7,6 +7,9 @@ return [
 		'set_in'		=> 'Set in',
 		'set_up'		=> 'Set up',
 		'log_out'		=> 'Log out',
+		'change_lang'	=> 'Change language',
+		'zh_cn'			=> 'zh-CN',
+		'en'			=> 'English',
 	],
 
 	'login' => [
