@@ -19,5 +19,6 @@ return [
 		'password'		=> '密码',
 		'remember_me'	=> '记住密码',
 		'forget_pw'		=> '忘记密码？',
+        'captcha'       => '验证码',
 	],
 ];

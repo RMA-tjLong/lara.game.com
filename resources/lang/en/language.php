@@ -19,5 +19,6 @@ return [
 		'password'		=> 'password',
 		'remember_me'	=> 'Remember me',
 		'forget_pw'		=> 'Forget password?',
+        'captcha'       => 'Captcha',
 	],
 ];
