@@ -10,9 +10,11 @@ return [
 		'change_lang'	=> '切换语言',
 		'zh_cn'			=> '简体中文',
 		'en'			=> '英语',
+        'about_us'      => '关于我们',
+        'comments'       => '留言',
 	],
 
-	'login' => [
+	'auth' => [
 		'email'			=> '邮箱',
 		'password'		=> '密码',
 		'remember_me'	=> '记住密码',

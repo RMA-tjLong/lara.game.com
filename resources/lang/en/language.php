@@ -10,9 +10,11 @@ return [
 		'change_lang'	=> 'Change language',
 		'zh_cn'			=> 'zh-CN',
 		'en'			=> 'English',
+        'about_us'      => 'About us',
+        'comments'       => 'Comments',
 	],
 
-	'login' => [
+	'auth' => [
 		'email'			=> 'Email',
 		'password'		=> 'password',
 		'remember_me'	=> 'Remember me',

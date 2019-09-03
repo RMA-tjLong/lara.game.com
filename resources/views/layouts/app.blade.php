@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -34,10 +34,6 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -67,6 +63,12 @@
                             </li>
                         @endguest
 
+                        <!-- 关于我们 -->
+                        <li><a href="{{ url('about') }}">{{ __('language.common.about_us') }}</a></li>
+                        <!-- 留言 -->
+                        <li><a href="{{ url('comments') }}">{{ __('language.common.comments') }}</a></li>
+
+                        <!-- 切换语言下拉菜单 -->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 {{ __('language.common.change_lang') }}<span class="caret"></span>
@@ -77,6 +79,7 @@
                             </ul>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
