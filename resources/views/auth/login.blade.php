@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-5">
+        <div class="col-md-7 col-md-offset-5">
             <div class="panel panel-default">
                 <div class="panel-heading">{{ __('language.common.set_in') }}</div>
 

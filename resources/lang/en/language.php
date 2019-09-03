@@ -11,14 +11,16 @@ return [
 		'zh_cn'			=> 'zh-CN',
 		'en'			=> 'English',
         'about_us'      => 'About us',
-        'comments'       => 'Comments',
+        'comments'      => 'Comments',
 	],
 
 	'auth' => [
 		'email'			=> 'Email',
-		'password'		=> 'password',
+		'password'		=> 'Password',
+        'pw_confirm'    => 'Password confirm',
 		'remember_me'	=> 'Remember me',
 		'forget_pw'		=> 'Forget password?',
         'captcha'       => 'Captcha',
+        'nickname'      => 'Nickname',
 	],
 ];

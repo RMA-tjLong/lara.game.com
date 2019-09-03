@@ -31,6 +31,7 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     bottom: 1px;
     right: 16px;
     border-radius: 0 4px 4px 0;
+    cursor: pointer;
 }
 .captcha-group .captcha-ipt {
     padding-right: 112px;
