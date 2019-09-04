@@ -39,7 +39,7 @@ class LoginController extends Controller
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string',
-            'captcha'  => 'required|captcha'
+            'captcha'  => 'required|string|captcha',
         ]);
     }
 

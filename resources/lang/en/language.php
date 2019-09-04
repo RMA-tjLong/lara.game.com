@@ -22,5 +22,6 @@ return [
 		'forget_pw'		=> 'Forget password?',
         'captcha'       => 'Captcha',
         'nickname'      => 'Nickname',
+        'has_account'   => 'Existing account?',
 	],
 ];

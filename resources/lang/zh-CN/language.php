@@ -22,5 +22,6 @@ return [
 		'forget_pw'		=> '忘记密码？',
         'captcha'       => '验证码',
         'nickname'      => '昵称',
+        'has_account'   => '已有账号？前往登录',
 	],
 ];
