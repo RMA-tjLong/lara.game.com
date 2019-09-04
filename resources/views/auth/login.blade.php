@@ -38,7 +38,7 @@
                         </div>
 
                         <!-- 验证码 -->
-                        <div class="form-group{{ $errors->has('captcha') ? 'has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
                             <label for="captcha" class="col-md-3 control-label">{{ __('language.auth.captcha') }}</label>
                             <div class="col-md-7 captcha-group">
                                 <input id="captcha"  class="form-control captcha-ipt" type="captcha" name="captcha" value="{{ old('captcha')  }}" required>

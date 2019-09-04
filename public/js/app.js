@@ -45024,8 +45024,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\workspace\test-code\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! D:\workspace\test-code\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
+__webpack_require__(/*! /usr/share/nginx/html/lara.game.com/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /usr/share/nginx/html/lara.game.com/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })
