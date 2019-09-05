@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Carbon\Carbon;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
 use Illuminate\Support\Facades\Mail;
@@ -44,16 +45,16 @@ class AuthController
      * 验证邮箱和token
      *
      * @param $token
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse
      */
     public function verification($token)
     {
         $user = User::where('verification_token',$token)->first();
-        // $user->verified_at = ;
+        $user->verified_at = Carbon::now();
         $user->verification_token = null;
         $user->save();
 
-        session()->flash('success', '恭喜您，邮箱验证成功！');
-        return redirect('https://XXX.com');
+        session()->flash('success', __('verification_success'));
+        return redirect('home');
     }
 }

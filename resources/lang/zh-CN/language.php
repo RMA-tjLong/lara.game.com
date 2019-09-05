@@ -23,5 +23,6 @@ return [
         'captcha'       => '验证码',
         'nickname'      => '昵称',
         'has_account'   => '已有账号？前往登录',
+        'verification_success' => '恭喜您，验证成功！',
 	],
 ];

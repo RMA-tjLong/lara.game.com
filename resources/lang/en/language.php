@@ -23,5 +23,6 @@ return [
         'captcha'       => 'Captcha',
         'nickname'      => 'Nickname',
         'has_account'   => 'Existing account? Set in',
+        'verification_success' => 'Congratulations, Successful verification!',
 	],
 ];
