@@ -6,8 +6,9 @@ use Carbon\Carbon;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
 use Illuminate\Support\Facades\Mail;
+use App\Models\UsersModel;
 
-class AuthController
+class MailVerificationController
 {
     use VerifiesUsers;
 
@@ -47,14 +48,20 @@ class AuthController
      * @param $token
      * @return RedirectResponse
      */
-    public function verification($token)
+    public function getVerification($token)
     {
-        $user = User::where('verification_token',$token)->first();
-        $user->verified_at = Carbon::now();
-        $user->verification_token = null;
-        $user->save();
+        $users = UsersModel::where('verification_token', $token)->first();
 
-        session()->flash('success', __('verification_success'));
-        return redirect('home');
+        if (!$users) {
+            return;
+        }
+
+        $users->verification_token = null;
+        $users->verified = true;
+        $users->verified_at = Carbon::now();
+        $users->save();
+
+        session()->flash('success', __('language.auth.verification_success'));
+        return redirect('/');
     }
 }

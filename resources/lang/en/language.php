@@ -24,5 +24,6 @@ return [
         'nickname'      => 'Nickname',
         'has_account'   => 'Existing account? Set in',
         'verification_success' => 'Congratulations, Successful verification!',
+        'verification_error' => 'Link expired'
 	],
 ];

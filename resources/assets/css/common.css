@@ -56,3 +56,14 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     color: #f0f0f0;
     background-color: var(--global-active-color);
 }
+
+/* nav toggle */
+.navbar-primary .navbar-toggle {
+    border-color: #ccc;
+}
+.navbar-primary .navbar-toggle:hover, .navbar-primary .navbar-toggle:focus {
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-toggle .icon-bar {
+    background-color: #fff;
+}

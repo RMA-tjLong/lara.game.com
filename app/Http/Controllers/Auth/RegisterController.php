@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\MailVerificationController;
 
 class RegisterController extends Controller
 {
@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        $auth = new AuthController;
+        $auth = new MailVerificationController;
         $auth->sendVerificationEmail($res);
     }
 }
