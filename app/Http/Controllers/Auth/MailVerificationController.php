@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
 use Illuminate\Support\Facades\Mail;
-use App\Models\UsersModel;
+use App\User;
 
 class MailVerificationController
 {
@@ -16,6 +16,7 @@ class MailVerificationController
      * 发送验证邮件
      *
      * @param $user
+     * @return RedirectResponse
      */
     public function sendVerificationEmail($user)
     {
@@ -40,6 +41,8 @@ class MailVerificationController
                 $message->to($to)->subject($subject);
             }
         );
+
+        return redirect('/login');
     }
 
     /**
@@ -50,7 +53,7 @@ class MailVerificationController
      */
     public function getVerification($token)
     {
-        $users = UsersModel::where('verification_token', $token)->first();
+        $users = User::where('verification_token', $token)->first();
 
         if (!$users) {
             return;

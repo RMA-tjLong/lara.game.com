@@ -1,14 +1,14 @@
-Hey {{ $data['name'] }}!
+{{ __('language.email.verified_1st_line') }} {{ $data['name'] }}
 <br><br>
-A sign in attempt requires further verification because we did not recognize your device. To complete the sign in, click the link for verification on the unrecognized device.
+{{ __('language.email.verified_2nd_line') }}
 <br><br>
-Verification link: <a href="{{ $data['verification_link'] }}" target="_blank">{{ $data['verification_link'] }}</a>
+{{ __('language.email.verified_3rd_line') }} <a href="{{ $data['verification_link'] }}" target="_blank">{{ $data['verification_link'] }}</a>
 <br><br>
-If you did not attempt to sign in to your account, your password may be compromised.
+{{ __('language.email.verified_4th_line') }}
 <br><br>
-For more information, see <a href="{{ $data['about_link'] }}" target="_blank">{{ $data['about_link'] }}</a> in the {{ $data['app_name'] }} About.
-<br><br>
-Thanks,
+{{ __('language.email.verified_5th_line') }} <a href="{{ $data['about_link'] }}" target="_blank">{{ $data['about_link'] }}</a>
+<br><br><br>
+{{ __('language.email.verified_6th_line') }}
 <br>
-Your friends at {{ $data['app_name'] }}
+{{ __('language.email.verified_7th_line') }} {{ $data['app_name'] }}
 <br>
