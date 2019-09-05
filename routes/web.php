@@ -26,6 +26,9 @@ Auth::routes();
 // 关于我们
 Route::get('about', 'AboutController@index')->name('about.index');
 
+// 邮件验证
+Route::get('verification/{token}', 'Auth\AuthController@getVerification');
+
 // 通过身份验证的系统允许的操作
 Route::group(['middleware' => 'auth'], function () {
     // 主页
