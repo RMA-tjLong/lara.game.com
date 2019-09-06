@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('about', 'AboutController@index')->name('about.index');
 
 // 邮件验证
-Route::get('verification/{token}', 'Auth\MailVerificationController@getVerification');
+Route::get('verification/{token}', 'Auth\VerificateMailController@getVerification');
 
 // 通过身份验证的系统允许的操作
 Route::group(['middleware' => 'auth'], function () {
@@ -35,14 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     // 留言（每个用户最多留言十次且不能编辑）
-    Route::prefix('comments')->group(function() {
-        // 留言板
-        Route::get('/', 'CommentsController@index')->name('comments.index');
-        // 历史留言
-        Route::get('show', 'CommentsController@show')->name('comments.show');
-        // 留言提交
-        Route::post('store', 'CommentsController@store')->name('comments.store');
-        // 留言删除
-        Route::post('del', 'CommentsController@destroy')->name('comments.del');
-    });
+    Route::resource('comments', 'CommentsController', ['only' => ['index, store, destroy']]);
+    Route::get('comments/show', 'CommentsControl@show')->name('comments.show');
 });

@@ -8311,3 +8311,210 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 .navbar-primary .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+:root {
+    --global-color: #0a628f;
+    --global-active-color: #0a4d6f;
+}
+
+button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;
+}
+.btn {
+    padding: 0 10px;
+}
+.btn-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle {
+    background-color: var(--global-active-color);
+    border-color: var(--global-active-color);
+}
+.btn-link:focus, .btn-link:hover {
+    text-decoration: none;
+}
+
+/* captcha 针对使用captcha primary所定制 */
+.captcha-group {
+    position: relative;
+}
+.captcha-group .captcha-img {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.captcha-group .captcha-ipt {
+    padding-right: 112px;
+}
+
+/* navbar颜色 */
+.navbar-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.navbar-primary .navbar-nav > li > a {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-nav > li > a:hover, .navbar-primary .navbar-nav > li > a:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-brand {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-brand:hover, .navbar-primary .navbar-brand:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+
+/* nav toggle */
+.navbar-primary .navbar-toggle {
+    border-color: #ccc;
+}
+.navbar-primary .navbar-toggle:hover, .navbar-primary .navbar-toggle:focus {
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+:root {
+    --global-color: #0a628f;
+    --global-active-color: #0a4d6f;
+}
+
+button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;
+}
+.btn {
+    padding: 0 10px;
+}
+.btn-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle {
+    background-color: var(--global-active-color);
+    border-color: var(--global-active-color);
+}
+.btn-link:focus, .btn-link:hover {
+    text-decoration: none;
+}
+
+/* captcha 针对使用captcha primary所定制 */
+.captcha-group {
+    position: relative;
+}
+.captcha-group .captcha-img {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.captcha-group .captcha-ipt {
+    padding-right: 112px;
+}
+
+/* navbar颜色 */
+.navbar-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.navbar-primary .navbar-nav > li > a {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-nav > li > a:hover, .navbar-primary .navbar-nav > li > a:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-brand {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-brand:hover, .navbar-primary .navbar-brand:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+
+/* nav toggle */
+.navbar-primary .navbar-toggle {
+    border-color: #f00;
+}
+.navbar-primary .navbar-toggle:hover, .navbar-primary .navbar-toggle:focus {
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+:root {
+    --global-color: #0a628f;
+    --global-active-color: #0a4d6f;
+}
+
+button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;
+}
+.btn {
+    padding: 0 10px;
+}
+.btn-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.btn-primary.active, .btn-primary:active, .btn-primary:hover, .open>.btn-primary.dropdown-toggle {
+    background-color: var(--global-active-color);
+    border-color: var(--global-active-color);
+}
+.btn-link:focus, .btn-link:hover {
+    text-decoration: none;
+}
+
+/* captcha 针对使用captcha primary所定制 */
+.captcha-group {
+    position: relative;
+}
+.captcha-group .captcha-img {
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    right: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.captcha-group .captcha-ipt {
+    padding-right: 112px;
+}
+
+/* navbar颜色 */
+.navbar-primary {
+    background-color: var(--global-color);
+    border-color: var(--global-color);
+}
+.navbar-primary .navbar-nav > li > a {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-nav > li > a:hover, .navbar-primary .navbar-nav > li > a:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-brand {
+    color: #e0e0e0;
+}
+.navbar-primary .navbar-brand:hover, .navbar-primary .navbar-brand:focus {
+    color: #f0f0f0;
+    background-color: var(--global-active-color);
+}
+
+/* nav toggle */
+.navbar-primary .navbar-toggle {
+    border-color: #ccc;
+}
+.navbar-primary .navbar-toggle:hover, .navbar-primary .navbar-toggle:focus {
+    background-color: var(--global-active-color);
+}
+.navbar-primary .navbar-toggle .icon-bar {
+    background-color: #fff;
+}

@@ -1,7 +1,5 @@
 <?php
 
-// resources/lang/zh-CN/messages.php
-
 return [
 	'common' => [
 		'set_in'		=> '登陆',
@@ -23,8 +21,9 @@ return [
         'captcha'       => '验证码',
         'nickname'      => '昵称',
         'has_account'   => '已有账号？前往登录',
-        'verification_success' => '恭喜您，验证成功！',
-        'verification_error' => '链接已失效'
+        'verification_success'  => '恭喜您，验证成功！',
+        'verification_error'    => '链接已失效',
+        'verification_warning'  => '请前往注册邮箱进行激活',
 	],
 
     'email' => [

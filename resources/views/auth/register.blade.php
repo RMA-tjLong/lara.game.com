@@ -41,7 +41,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-3 control-label">{{ __('language.auth.password') }}</label>
                             <div class="col-md-7">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" required pattern="{{ config('regex.password')  }}" title="{{ __('regex.password') }}">
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>

@@ -8,7 +8,7 @@ use Jrean\UserVerification\Facades\UserVerification;
 use Illuminate\Support\Facades\Mail;
 use App\User;
 
-class MailVerificationController
+class VerificateMailController
 {
     use VerifiesUsers;
 
@@ -28,11 +28,11 @@ class MailVerificationController
             'verification_link' => url('verification', $user->verification_token) . '?email=' . urlencode($user->email),
             'name' => $user->name,
             'about_link' => url('about'),
-            'app_name' => env('APP_NAME', 'laravel'),
+            'app_name' => config('app.name'),
         ];
 
         $to = $user->email;
-        $subject = 'Welcome to ' . env('APP_NAME', 'laravel') . '! Confirm Your Email';
+        $subject = __('language.email.verified_subject_1') . env('APP_NAME', 'laravel') . __('language.email.verified_subject_2');
 
         Mail::send(
             'email.signUpEmailVerification',
@@ -42,7 +42,7 @@ class MailVerificationController
             }
         );
 
-        return redirect('/login');
+        // session()->flash('verification_warning', __('language.auth.verification_warning'));
     }
 
     /**
@@ -56,7 +56,8 @@ class MailVerificationController
         $users = User::where('verification_token', $token)->first();
 
         if (!$users) {
-            return;
+            // session()->flash('verification_error', __('language.auth.verification_error'));
+            return redirect('/login');
         }
 
         $users->verification_token = null;
@@ -64,7 +65,7 @@ class MailVerificationController
         $users->verified_at = Carbon::now();
         $users->save();
 
-        session()->flash('success', __('language.auth.verification_success'));
+        // session()->flash('verification_success', __('language.auth.verification_success'));
         return redirect('/');
     }
 }

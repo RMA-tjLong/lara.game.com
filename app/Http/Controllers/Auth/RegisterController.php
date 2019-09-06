@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Http\Controllers\Auth\MailVerificationController;
+use App\Http\Controllers\Auth\VerificateMailController;
 
 class RegisterController extends Controller
 {
@@ -51,7 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed|regex:' . config('regex.password'),
+            'password' => 'required|string|min:6|confirmed|regex:/' . config('regex.password') . '/',
             'captcha' => 'required|string|captcha',
         ]);
     }
@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        $auth = new MailVerificationController;
+        $auth = new VerificateMailController;
         $auth->sendVerificationEmail($res);
 
         return $res;
