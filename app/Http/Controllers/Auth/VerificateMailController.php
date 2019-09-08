@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Jobs\SendMailJob;
 use Carbon\Carbon;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
-use Illuminate\Support\Facades\Mail;
 use App\User;
 
 class VerificateMailController
@@ -31,16 +31,15 @@ class VerificateMailController
             'app_name' => config('app.name'),
         ];
 
-        $to = $user->email;
-        $subject = __('language.email.verified_subject_1') . env('APP_NAME', 'laravel') . __('language.email.verified_subject_2');
+        $bindings = [
+            'template'  => 'email.signUpEmailVerification',
+            'to'        => $user->email,
+            'subject'   => __('language.email.verified_subject_1') . env('APP_NAME', 'laravel') . __('language.email.verified_subject_2'),
+            'assign'    => ['data' => $data]
+        ];
 
-        Mail::send(
-            'email.signUpEmailVerification',
-            ['data' => $data],
-            function ($message) use ($to, $subject) {
-                $message->to($to)->subject($subject);
-            }
-        );
+        // 调用队列发送注册验证邮件
+        SendMailJob::dispatch($bindings);
 
         // session()->flash('verification_warning', __('language.auth.verification_warning'));
     }
