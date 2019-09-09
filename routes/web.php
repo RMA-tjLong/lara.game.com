@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     // 留言（每个用户最多留言十次且不能编辑）
-    Route::resource('comments', 'CommentsController', ['only' => ['index, store, destroy']]);
-    Route::get('comments/show', 'CommentsControl@show')->name('comments.show');
+    Route::resource('comments', 'CommentsController', ['only' => [
+        'index', 'store', 'destroy'
+    ]]);
+    Route::get('comments/show', 'CommentsController@show')->name('comments.show');
 });
