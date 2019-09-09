@@ -76,6 +76,14 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 }
 
 /* 组件视图 提醒框组件 */
+@keyframes warning-box-slide-up {
+    0% {
+        bottom: -250px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
 .warning-box {
     position: fixed;
     bottom: 10px;
@@ -84,8 +92,21 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     border-radius: 5px;
     width: 400px;
     height: 250px;
-    padding: 10px 15px;
+    padding: 40px 15px 10px 15px;
     background-color: #fff;
     z-index: 9999;
     box-shadow: 2px 2px 2px #ccc;
+}
+.warning-box.slide-up {
+    animation: warning-box-slide-up 1.5s;
+}
+.warning-box .warning-bar-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: var(--global-color);
+    color: #fff;
+    line-height: 30px;
 }

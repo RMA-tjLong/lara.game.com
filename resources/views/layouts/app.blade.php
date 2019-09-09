@@ -66,7 +66,7 @@
                         <!-- 关于我们 -->
                         <li><a href="{{ route('about.index') }}">{{ __('language.common.about_us') }}</a></li>
                         <!-- 留言 -->
-                        <li><a href="{{ url('comments') }}">{{ __('language.common.comments') }}</a></li>
+                        <li><a href="{{ route('comments.index') }}">{{ __('language.common.comments') }}</a></li>
 
                         <!-- 切换语言下拉菜单 -->
                         <li class="dropdown">
