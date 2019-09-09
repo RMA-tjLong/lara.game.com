@@ -26,6 +26,12 @@ return [
         'verification_warning'  => 'Please go to the registered mailbox to activate',
 	],
 
+    'warning' => [
+        'email_verificate_title'    => '',
+        'email_verificate_text_1st' => '',
+        'email_verificate_text_2nd' => '',
+    ],
+
     'email' => [
         'verified_subject_1'    => 'Welcome to ',
         'verified_subject_2'    => '! Confirm Your Email',

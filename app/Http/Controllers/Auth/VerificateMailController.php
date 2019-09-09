@@ -40,8 +40,6 @@ class VerificateMailController
 
         // 调用队列发送注册验证邮件
         SendMailJob::dispatch($bindings);
-
-        // session()->flash('verification_warning', __('language.auth.verification_warning'));
     }
 
     /**
@@ -55,7 +53,6 @@ class VerificateMailController
         $users = User::where('verification_token', $token)->first();
 
         if (!$users) {
-            // session()->flash('verification_error', __('language.auth.verification_error'));
             return redirect('/login');
         }
 
@@ -64,7 +61,6 @@ class VerificateMailController
         $users->verified_at = Carbon::now();
         $users->save();
 
-        // session()->flash('verification_success', __('language.auth.verification_success'));
         return redirect('/');
     }
 }

@@ -3,6 +3,13 @@
     --global-active-color: #0a4d6f;
 }
 
+/* 段落 */
+.p-text {
+    text-indent: 2em;
+    word-break: break-all;
+}
+
+/* 按钮样式 */
 button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
     outline: none;
 }
@@ -66,4 +73,19 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 }
 .navbar-primary .navbar-toggle .icon-bar {
     background-color: #fff;
+}
+
+/* 组件视图 提醒框组件 */
+.warning-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    height: 250px;
+    padding: 10px 15px;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 2px 2px 2px #ccc;
 }
