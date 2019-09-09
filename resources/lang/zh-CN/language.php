@@ -26,6 +26,12 @@ return [
         'verification_warning'  => '请前往注册邮箱进行激活',
 	],
 
+    'warning' => [
+        'email_verificate_title'    => '请激活注册邮箱',
+        'email_verificate_text_1st' => '为保障您的账户安全，请尽快前往',
+        'email_verificate_text_2nd' => '激活您的注册邮箱。未收到邮件？请点击以下链接重发邮件',
+    ],
+
     'email' => [
         'verified_1st_line' => '你好',
         'verified_2nd_line' => '尝试中的登陆需要进一步验证，因为我们不能识别您的设备。为了完成登录，请单击下面的链接来进行验证',

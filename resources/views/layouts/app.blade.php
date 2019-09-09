@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -64,7 +64,7 @@
                         @endguest
 
                         <!-- 关于我们 -->
-                        <li><a href="{{ url('about') }}">{{ __('language.common.about_us') }}</a></li>
+                        <li><a href="{{ route('about.index') }}">{{ __('language.common.about_us') }}</a></li>
                         <!-- 留言 -->
                         <li><a href="{{ url('comments') }}">{{ __('language.common.comments') }}</a></li>
 
@@ -83,6 +83,21 @@
                 </div>
             </div>
         </nav>
+
+        @if (Auth::check() && !Auth()->user()->verified)
+            <!-- 通过登录验证未激活邮件时 -->
+            @component('components.WarningWithoutCloseBar')
+                @slot('title')
+                    {{ __('language.warning.email_verificate_title') }}
+                @endslot
+
+                @slot('text')
+                    <p class="p-text">{{ __('language.warning.email_verificate_text_1st') }} {{ Auth::user()->email }} {{ __('language.warning.email_verificate_text_2nd') }}</p>
+                    <br>
+                    <a href="test">test</a>
+                @endslot
+            @endcomponent
+        @endif
 
         @yield('content')
     </div>
