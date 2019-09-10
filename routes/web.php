@@ -26,6 +26,9 @@ Auth::routes();
 // 关于我们
 Route::get('about', 'AboutController@index')->name('about.index');
 
+// 重新发送验证邮件
+Route::view('verification/resend', 'auth/resendVerificateMailForm')->name('verification.resend.form');
+Route::post('verification/resend', 'Auth\VerificateMailController@resendVerificateMail')->name('verification.resend.sub');
 // 邮件验证
 Route::get('verification/{token}', 'Auth\VerificateMailController@getVerification');
 

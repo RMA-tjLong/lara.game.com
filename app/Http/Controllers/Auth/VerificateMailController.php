@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Jobs\SendMailJob;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
 use App\User;
@@ -16,10 +17,11 @@ class VerificateMailController
      * 发送验证邮件
      *
      * @param $user
-     * @return RedirectResponse
      */
     public function sendVerificationEmail($user)
     {
+        if ($user->verified) return;
+
         // 生成用户的验证token
         UserVerification::generate($user);
 
@@ -40,6 +42,20 @@ class VerificateMailController
 
         // 调用队列发送注册验证邮件
         SendMailJob::dispatch($bindings);
+    }
+
+    /**
+     * 重新发送验证邮件
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return RedirectResponse
+     */
+    public function resendVerificateMail(Request $request) {
+        $this->validateRequest($request);
+        $res = User::where('email', $request->input('email'))->first();
+        $this->sendVerificationEmail($res);
+
+        return redirect('/');
     }
 
     /**

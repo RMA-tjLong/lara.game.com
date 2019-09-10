@@ -10,6 +10,7 @@ return [
 		'en'			=> '英语',
         'about_us'      => '关于我们',
         'comments'      => '留言',
+        'verificate'    => '验证',
 	],
 
 	'auth' => [
@@ -28,8 +29,8 @@ return [
 
     'warning' => [
         'email_verificate_title'    => '请激活注册邮箱',
-        'email_verificate_text_1st' => '为保障您的账户安全，请尽快前往',
-        'email_verificate_text_2nd' => '激活您的注册邮箱。未收到邮件？请点击以下链接重发邮件',
+        'email_verificate_text_1st' => '为保障您的账户安全，请尽快前往 ',
+        'email_verificate_text_2nd' => ' 激活您的注册邮箱。未收到邮件？请点击以下链接重发邮件',
     ],
 
     'email' => [
