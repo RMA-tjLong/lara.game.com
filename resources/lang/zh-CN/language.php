@@ -31,6 +31,7 @@ return [
         'email_verificate_title'    => '请激活注册邮箱',
         'email_verificate_text_1st' => '为保障您的账户安全，请尽快前往 ',
         'email_verificate_text_2nd' => ' 激活您的注册邮箱。未收到邮件？请点击以下链接重发邮件',
+        'send_success'              => '发送成功',
     ],
 
     'email' => [

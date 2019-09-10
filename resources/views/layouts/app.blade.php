@@ -84,6 +84,15 @@
             </div>
         </nav>
 
+        @if (session()->has('success'))
+            <!-- 操作成功通知 -->
+            @component('components.RemindSuccessful')
+                @slot('text')
+                    {{ session()->pull('success') }}
+                @endslot
+            @endcomponent
+        @endif
+
         @if (Auth::check() && !Auth()->user()->verified)
             <!-- 通过登录验证未激活邮件时 -->
             @component('components.WarningWithoutCloseBar')
