@@ -10,6 +10,7 @@ return [
 		'en'			=> 'English',
         'about_us'      => 'About us',
         'comments'      => 'Comments',
+        'verificate'    => 'Verificate',
 	],
 
 	'auth' => [
@@ -27,9 +28,9 @@ return [
 	],
 
     'warning' => [
-        'email_verificate_title'    => '',
-        'email_verificate_text_1st' => '',
-        'email_verificate_text_2nd' => '',
+        'email_verificate_title'    => 'Please activate the registration email',
+        'email_verificate_text_1st' => 'To keep your account secure, please go ',
+        'email_verificate_text_2nd' => ' as soon as possible to activate your registered email address. Didn\'t receive the email? Please click the link below to resend the message',
     ],
 
     'email' => [

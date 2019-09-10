@@ -92,9 +92,13 @@
                 @endslot
 
                 @slot('text')
-                    <p class="p-text">{{ __('language.warning.email_verificate_text_1st') }} {{ Auth::user()->email }} {{ __('language.warning.email_verificate_text_2nd') }}</p>
+                    <p class="p-text">
+                        {{ __('language.warning.email_verificate_text_1st') }}
+                        <b>{{ Auth::user()->email }}</b>
+                        {{ __('language.warning.email_verificate_text_2nd') }}
+                    </p>
                     <br>
-                    <a href="test">test</a>
+                    <a href="{{ route('verification.resend.form') }}">{{ route('verification.resend.form') }}</a>
                 @endslot
             @endcomponent
         @endif
