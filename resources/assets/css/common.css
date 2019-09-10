@@ -77,12 +77,9 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 
 /* 组件视图 提醒框组件 */
 @keyframes warning-box-slide-up {
-    0% {
-        bottom: -250px;
-    }
-    100% {
-        bottom: 10px;
-    }
+    0% { bottom: -250px; }
+    40% { bottom: -250px; }
+    100% { bottom: 10px; }
 }
 .warning-box {
     position: fixed;
@@ -98,7 +95,7 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     box-shadow: 2px 2px 2px #ccc;
 }
 .warning-box.slide-up {
-    animation: warning-box-slide-up 1.5s;
+    animation: warning-box-slide-up 2.5s;
 }
 .warning-box .warning-bar-top {
     position: absolute;
@@ -109,4 +106,33 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     background-color: var(--global-color);
     color: #fff;
     line-height: 30px;
+}
+
+/* 组件视图 提醒栏组件 */
+@keyframes remind-box-slide {
+    0% { top: -105px; }
+    10% { top: -105px; }
+    30% { top: 10px; }
+    80% { top: 10px; }
+    100% { top: -105px; }
+}
+.remind-box {
+    position: fixed;
+    top: -105px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: 3px solid #5cb85c;
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 2px 2px 2px #ccc;
+}
+.remind-box.slide {
+    animation: remind-box-slide 5s;
 }

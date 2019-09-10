@@ -42,6 +42,9 @@ class VerificateMailController
 
         // 调用队列发送注册验证邮件
         SendMailJob::dispatch($bindings);
+
+        // session闪存发送成功信息
+        session()->flash('success', __('language.warning.send_success'));
     }
 
     /**
