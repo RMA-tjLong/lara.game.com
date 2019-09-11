@@ -86,7 +86,7 @@
 
         @if (session()->has('success'))
             <!-- 操作成功通知 -->
-            @component('components.RemindSuccessful')
+            @component('components.remind-successful')
                 @slot('text')
                     {{ session()->pull('success') }}
                 @endslot
@@ -95,7 +95,7 @@
 
         @if (Auth::check() && !Auth()->user()->verified)
             <!-- 通过登录验证未激活邮件时 -->
-            @component('components.WarningWithoutCloseBar')
+            @component('components.warning-without-closebar')
                 @slot('title')
                     {{ __('language.warning.email_verificate_title') }}
                 @endslot
