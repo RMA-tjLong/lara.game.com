@@ -136,3 +136,6 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 .remind-box.slide {
     animation: remind-box-slide 5s;
 }
+.remind-box.remind-error {
+    border-top: 3px solid #d43f3a;
+}
