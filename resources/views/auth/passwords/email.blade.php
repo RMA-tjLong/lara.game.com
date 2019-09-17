@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session()->has('status'))
+    @component('components.remind-successful')
+        @slot('text')
+            {{ session()->pull('status') }}
+        @endslot
+    @endcomponent
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-7 col-md-offset-5">
@@ -8,14 +15,6 @@
                 <div class="panel-heading">{{ __('language.auth.pw_reset') }}</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        @component('components.remind-successful')
-                            @slot('text')
-                                {{ session('status') }}
-                            @endslot
-                        @endcomponent
-                    @endif
-
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
 
