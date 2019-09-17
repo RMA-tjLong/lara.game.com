@@ -122,20 +122,19 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     left: 0;
     right: 0;
     margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     border-top: 3px solid #5cb85c;
-    width: 250px;
+    width: 400px;
     height: 60px;
     line-height: 60px;
     text-align: center;
-    background-color: #fff;
+    background-color: #65dc65;
+    color: #f0f0f0;
     z-index: 9999;
-    box-shadow: 2px 2px 2px #ccc;
 }
 .remind-box.slide {
     animation: remind-box-slide 5s;
 }
 .remind-box.remind-error {
     border-top: 3px solid #d43f3a;
+    background-color: #ec5651;
 }

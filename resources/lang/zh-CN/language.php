@@ -25,6 +25,8 @@ return [
         'verification_success'  => '恭喜您，验证成功！',
         'verification_error'    => '链接已失效',
         'verification_warning'  => '请前往注册邮箱进行激活',
+        'pw_reset'      => '重置密码',
+        'send_pw_reset_link'    => '发送重置密码链接',
 	],
 
     'warning' => [

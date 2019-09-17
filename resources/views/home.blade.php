@@ -9,9 +9,11 @@
 
                 <div class="panel-body">
                     @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
+                        @component('components.remind-successful')
+                            @slot('text')
+                                {{ session('status') }}
+                            @endslot
+                        @endcomponent
                     @endif
 
                     You are logged in!
