@@ -46,5 +46,10 @@ return [
         'verified_5th_line'     => 'For more information, see',
         'verified_6th_line'     => 'Thanks,',
         'verified_7th_line'     => 'Your friends at',
+        'resetpw_notification_subject'  => 'Reset Password',
+        'resetpw_notification_1st_line' => 'You are receiving this email because we received a password reset request for your account',
+        'resetpw_notification_2nd_line' => 'If you did not request a password reset, no further action is required',
+        'resetpw_notification_3rd_line' => 'copy and paste the URL below into your web browser: ',
+        'resetpw_notification_action'   => 'Reset Password',
     ],
 ];
