@@ -25,7 +25,7 @@ return [
         'verification_success'  => 'Congratulations, Successful verification!',
         'verification_error'    => 'Link expired',
         'verification_warning'  => 'Please go to the registered mailbox to activate',
-        'pw_reset'      => 'Reset Password',
+        'pw_reset'              => 'Reset Password',
         'send_pw_reset_link'    => 'Send Password Reset Link',
 	],
 

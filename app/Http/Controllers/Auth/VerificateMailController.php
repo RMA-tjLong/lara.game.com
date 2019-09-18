@@ -36,7 +36,7 @@ class VerificateMailController
         $bindings = [
             'template'  => 'email.signup-email-verification',
             'to'        => $user->email,
-            'subject'   => __('language.email.verified_subject_1') . env('APP_NAME', 'laravel') . __('language.email.verified_subject_2'),
+            'subject'   => __('language.email.verified_subject_1') . config('app.name') . __('language.email.verified_subject_2'),
             'assign'    => ['data' => $data]
         ];
 
