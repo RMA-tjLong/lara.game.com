@@ -73,7 +73,7 @@ class VerificateMailController
 
         if (!$users) {
             // 闪存错误信息
-            session()->flash('error', __('lanauge.warning.invalid_token'));
+            session()->flash('error', __('language.warning.invalid_token'));
             return redirect('/login');
         }
 
