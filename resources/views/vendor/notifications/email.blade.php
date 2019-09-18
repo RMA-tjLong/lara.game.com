@@ -8,13 +8,8 @@
 {{ $line }}
 <br><br>
 @endforeach
-{{-- Subcopy --}}
-@isset($actionText)
-{{ __('language.email.resetpw_notification_3rd_line') }}
-<br><br>
 {{ $actionUrl }}
 <br><br><br>
-@endisset
 {{-- Salutation --}}
 @if (! empty($salutation))
     {{ $salutation }}

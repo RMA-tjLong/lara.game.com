@@ -102,9 +102,7 @@
 
                 @slot('text')
                     <p class="p-text">
-                        {{ __('language.warning.email_verificate_text_1st') }}
-                        <b>{{ Auth::user()->email }}</b>
-                        {{ __('language.warning.email_verificate_text_2nd') }}
+                        {!! __('language.warning.email_verificate_text', ['email_address' => '<b>' . Auth::user()->email . '</b>']) !!}
                     </p>
                     <br>
                     <a href="{{ route('verification.resend.form') }}">{{ route('verification.resend.form') }}</a>

@@ -46,7 +46,8 @@ class ResetPasswordNotification extends Notification
                     ->subject(__('language.email.resetpw_notification_subject'))
                     ->line(__('language.email.resetpw_notification_1st_line'))
                     ->action(__('language.email.resetpw_notification_action'), url(config('app.url').route('password.reset', $this->token, false)))
-                    ->line(__('language.email.resetpw_notification_2nd_line'));
+                    ->line(__('language.email.resetpw_notification_2nd_line'))
+                    ->line(__('language.email.resetpw_notification_3rd_line'));
     }
 
     /**
