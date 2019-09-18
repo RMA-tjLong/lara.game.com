@@ -93,6 +93,15 @@
             @endcomponent
         @endif
 
+        @if (session()->has('error'))
+            <!-- 错误通知 -->
+            @component('components.remind-error')
+                @slot('text')
+                    {{ session()->pull('error') }}
+                @endslot
+            @endcomponent
+        @endif
+
         @if (Auth::check() && !Auth()->user()->verified)
             <!-- 通过登录验证未激活邮件时 -->
             @component('components.warning-without-closebar')

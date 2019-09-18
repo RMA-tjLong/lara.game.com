@@ -72,6 +72,8 @@ class VerificateMailController
         $users = User::where('verification_token', $token)->first();
 
         if (!$users) {
+            // 闪存错误信息
+            session()->flash('error', __('lanauge.warning.invalid_token'));
             return redirect('/login');
         }
 
