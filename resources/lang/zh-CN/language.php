@@ -33,6 +33,7 @@ return [
         'email_verificate_title'    => '请激活注册邮箱',
         'email_verificate_text'     => '为保障您的账户安全，请尽快前往 :email_address 激活您的注册邮箱。未收到邮件？请点击以下链接重发邮件',
         'send_success'              => '发送成功',
+        'invalid_token'             => '密钥不合法',
     ],
 
     'email' => [
