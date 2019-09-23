@@ -3,6 +3,7 @@
 :root {
     --global-color: #0a628f;
     --global-active-color: #0a4d6f;
+    --global-active-light: #5e9fef;
 }
 
 * { word-wrap: break-word; outline: none; }
@@ -14,7 +15,7 @@ button { color: #555; font-size: 13px; }
 body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset { margin: 0; padding: 0; }
 ul, ol, li { list-style-image: none; list-style-type: none; }
 a { color: var(--global-color); text-decoration: none; blr:expression(this.onFocus=this.blur()) }
-a:hover { color: var(--global-active-color); text-decoration: none; }
+a:hover, a:focus { color: var(--global-active-color); text-decoration: none; outline: none; }
 a img { border: none; }
 em, cite, th { font-style: normal; font-weight: normal; }
 table { border-collapse: collapse; }
@@ -157,13 +158,32 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     background-color: #ec5651;
 }
 
+/* 页面底部声明foot */
+#foot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+}
+#foot>p {
+    color: #6c757d;
+    font-size: 12px;
+    line-height: 25px;
+}
+#foot>p:first-child {
+    border-top: 1px solid #6c757d;
+}
+
 /* 页面底部footer */
 #footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 45px;
+    height: 100px;
     background-color: var(--global-color);
 }
 #footer .link-box {
@@ -188,6 +208,11 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     height: 70px;
     line-height: 70px;
     border-radius: 50%;
+    transition: background-color 0.5s;
+}
+#footer .link-box>li>label>a {
+    display: block;
+    transition: color 0.5s;
 }
 #footer .link-box>li:nth-child(3) {
     padding: 0;
@@ -196,4 +221,22 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     width: 80px;
     height: 80px;
     line-height: 80px;
+}
+#footer .link-box>li>.active {
+    background-color: var(--global-active-color);
+}
+#footer .link-box>li>.active>a {
+    color: #f0f0f0;
+}
+#footer .link-box>li>label:hover:not(.active) {
+    background-color: var(--global-active-light);
+}
+#footer .link-box>li>label:not(.active)>a:hover {
+    color: #f0f0f0;
+}
+#footer #foot>p {
+    color: #f7f7f7;
+}
+#footer #foot>p:first-child {
+    border-color: #f7f7f7;
 }
