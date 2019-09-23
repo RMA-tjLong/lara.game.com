@@ -44,4 +44,12 @@ return [
         'resetpw_notification_3rd_line' => 'copy and paste the URL below into your web browser: ',
         'resetpw_notification_action'   => 'Reset Password',
     ],
+
+    'footer' => [
+        'mine'          => 'Mine',
+        'news'          => 'News',
+        'shop'          => 'Shop',
+        'forum'         => 'Forum',
+        'option'        => 'Option',
+    ],
 ];

@@ -34,7 +34,7 @@ class VerificateMailController
         ];
 
         $bindings = [
-            'template'  => 'email.signup-email-verification-' . \Cookie::get('lang'),
+            'template'  => 'email.signup-email-verification-' . \App::getLocale(),
             'to'        => $user->email,
             'subject'   => __('language.email.verified_subject'),
             'assign'    => ['data' => $data]
