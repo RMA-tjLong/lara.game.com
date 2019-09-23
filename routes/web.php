@@ -38,8 +38,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     // 留言（每个用户最多留言十次且不能编辑）
-    Route::resource('comments', 'CommentsController', ['only' => [
-        'index', 'store', 'destroy'
-    ]]);
+    Route::resource('comments', 'CommentsController', ['only' => ['index', 'store', 'destroy']]);
     Route::get('comments/show', 'CommentsController@show')->name('comments.show');
+
+    // 商城
+    Route::resource('modules/shop', 'Modules\ShopController', ['only' => ['index', 'show']]);
+    // 设置
+    Route::resource('modules/option', 'Modules\OptionController');
+    // 我的
+    Route::resource('modules/mine', 'Modules\MineController');
+    // 论坛
+    Route::resource('modules/forum', 'Modules\ForumController');
+    // 新闻
+    Route::resource('modules/news', 'Modules\NewsController');
 });
