@@ -44,4 +44,12 @@ return [
         'resetpw_notification_3rd_line' => '在地址栏复制并粘贴以下链接： ',
         'resetpw_notification_action'   => '重置密码',
     ],
+
+    'footer' => [
+        'mine'          => '我的',
+        'news'          => '新闻',
+        'shop'          => '商城',
+        'forum'         => '论坛',
+        'option'        => '设置',
+    ],
 ];
