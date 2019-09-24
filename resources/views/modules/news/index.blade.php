@@ -1,20 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.module')
 
-@section('content')
-    @if (session()->has('status'))
-        @component('components.remind-successful')
-            @slot('text')
-                {{ session()->pull('status') }}
-            @endslot
-        @endcomponent
-    @endif
+@section('active', 'news')
 
-    <div class="container">
+@section('context')
+    <div id="context" class="container">
     </div>
-
-    @component('components.footer')
-        @slot('active')
-            news
-        @endslot
-    @endcomponent
 @endsection

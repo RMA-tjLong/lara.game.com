@@ -3,11 +3,11 @@
 :root {
     --global-color: #0a628f;
     --global-active-color: #0a4d6f;
-    --global-active-light: #5e9fef;
+    --global-light: #166ca5;
+    --global-active-light: #46a4d4;
 }
 
 * { word-wrap: break-word; outline: none; }
-body { min-width: 1000px; }
 html, body { height: 100%; overflow: hidden; }
 html { -webkit-text-size-adjust: none; }
 body, td, input, textarea, select,
@@ -167,14 +167,12 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
     margin: auto;
     width: 100%;
     height: 50px;
+    border-top: 1px solid #f0f2f5;
+    color: #aaa;
 }
 #foot>p {
-    color: #6c757d;
     font-size: 12px;
     line-height: 25px;
-}
-#foot>p:first-child {
-    border-top: 1px solid #6c757d;
 }
 
 /* 页面底部footer */
@@ -234,9 +232,39 @@ button:focus, .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn
 #footer .link-box>li>label:not(.active)>a:hover {
     color: #f0f0f0;
 }
-#footer #foot>p {
-    color: #f7f7f7;
+#footer #foot {
+    color: var(--global-active-light);
+    border-color: var(--global-light);
 }
-#footer #foot>p:first-child {
-    border-color: #f7f7f7;
+
+/* 页面正文整体 */
+#context {
+    position: fixed;
+    top: 50px;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#context::-webkit-scrollbar {
+    width: 5px;
+}
+#context::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+#context::-webkit-scrollbar-thumb {
+    background-color: var(--global-active-light);
+}
+
+/* 页面左侧工具栏 */
+#left-tools {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    margin: auto;
+    width: 40px;
+    height: 120px;
 }
