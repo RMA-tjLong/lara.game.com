@@ -1,3 +1,3 @@
 <div id="left-tools">
-    <div><a class=""></a></div>
+    <div><a class="fa fa-edit"></a></div>
 </div>
