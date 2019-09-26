@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="background: url({{ asset('image/default/simple-codelines.svg') }});">
         <nav class="navbar navbar-primary navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
