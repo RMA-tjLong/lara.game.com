@@ -43,8 +43,8 @@ class VerificateMailController
         // 调用队列发送注册验证邮件
         SendMailJob::dispatch($bindings);
 
-        // session闪存发送成功信息
-        session()->flash('success', __('language.warning.send_success'));
+        // session存储发送成功信息
+        session()->put('success', __('language.warning.send_success'));
     }
 
     /**
@@ -73,7 +73,7 @@ class VerificateMailController
 
         if (!$users) {
             // 闪存错误信息
-            session()->flash('error', __('language.warning.invalid_token'));
+            session()->put('error', __('language.warning.invalid_token'));
             return redirect('/login');
         }
 

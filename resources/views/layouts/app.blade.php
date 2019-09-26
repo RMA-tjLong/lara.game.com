@@ -74,8 +74,8 @@
                                 {{ __('language.common.change_lang') }}<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ url('lang/zh-CN') }}"><img src="{{ asset('image/icons/cn.gif') }}"> {{ __('language.common.zh_cn') }}</a></li>
-                                <li><a href="{{ url('lang/en') }}"><img src="{{ asset('image/icons/en.gif') }}"> {{ __('language.common.en') }}</a></li>
+                                <li><a href="{{ url('lang/zh-CN') }}">{{ __('language.common.zh_cn') }}</a></li>
+                                <li><a href="{{ url('lang/en') }}">{{ __('language.common.en') }}</a></li>
                             </ul>
                         </li>
                     </ul>
