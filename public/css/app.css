@@ -14444,8 +14444,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     10% { top: -105px; }
     30% { top: 10px; }
     80% { top: 10px; }
-  100% {top: 10px;}
-    /*100% { top: -105px; }*/
+    100% { top: -105px; }
 }
 .remind-box {
     position: fixed;

@@ -18,3 +18,5 @@ mix.styles([
     'public/css/app.css',
     'resources/assets/css/common.css',
 ], 'public/css/app.css');
+
+mix.copyDirectory('resources/assets/image', 'public/image');
