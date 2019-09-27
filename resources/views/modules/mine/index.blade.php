@@ -2,7 +2,8 @@
 
 @section('active', 'mine')
 
-@section('context')
+@section('content')
+	@parent
     <div id="context" class="container">
     </div>
 @endsection

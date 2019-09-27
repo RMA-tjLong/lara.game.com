@@ -14,7 +14,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        return view('modules.forum.index');
+        return view('modules.' . $this->entityCode . '.index');
     }
 
     /**

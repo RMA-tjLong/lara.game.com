@@ -10,4 +10,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected $entityCode;
+
+    public function __construct()
+    {
+    	$this->entityCode = strtolower(preg_replace('~Controller(?!.*Controller)~', '', class_basename($this)));
+    }
 }

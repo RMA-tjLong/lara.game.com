@@ -14,7 +14,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        return view('modules.option.index');
+        return view('modules.' . $this->entityCode . '.index');
     }
 
     /**

@@ -14,7 +14,7 @@ class MineController extends Controller
      */
     public function index()
     {
-        return view('modules.mine.index');
+        return view('modules.' . $this->entityCode . '.index');
     }
 
     /**
