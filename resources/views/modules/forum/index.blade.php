@@ -2,7 +2,13 @@
 
 @section('active', 'forum')
 
-@section('context')
+@section('style')
+<style type="text/css">
+</style>
+@endsection
+
+@section('content')
+	@parent
     <div id="context" class="container">
     </div>
 @endsection

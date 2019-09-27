@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!-- Self defined style -->
+    @yield('style')
 </head>
 <body>
     <div id="app" style="background: url({{ asset('image/default/simple-codelines.svg') }});">

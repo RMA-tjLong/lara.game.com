@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('modules.news.index');
+        return view('modules.' . $this->entityCode . '.index');
     }
 
     /**
