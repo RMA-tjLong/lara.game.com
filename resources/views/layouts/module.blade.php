@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('style')
-    @yield('style')
-@endsection
-
 @section('content')
     @if (session()->has('status'))
         @component('components.remind-successful')
@@ -13,7 +9,6 @@
         @endcomponent
     @endif
 
-    @yield('content')
 
     @include('public.left-tools')
 

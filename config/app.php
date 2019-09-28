@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\ViewServiceProvider;
+
 return [
 
     /*
@@ -179,6 +181,7 @@ return [
 
         Mews\Captcha\CaptchaServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
     ],
 
     /*

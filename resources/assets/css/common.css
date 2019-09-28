@@ -1,10 +1,18 @@
 @charset "utf-8";
 
+/*
+`z-index` 约定
+所有 `position` 为 `fixed` 时 `z-index` 须设置为 `9999`
+所有 `弹窗` `z-index` 须设置为 `99999`
+*/
+
 :root {
     --global-color: #0a628f;
     --global-active-color: #0a4d6f;
     --global-light: #166ca5;
     --global-active-light: #46a4d4;
+    --global-context-bg: #214877;
+    --global-context-color: #c6d4df;
 }
 
 * {
@@ -148,6 +156,11 @@ button:focus,
 }
 .captcha-group .captcha-ipt {
     padding-right: 112px;
+}
+
+/* navbar样式 */
+.navbar-static-top {
+    z-index: 9999;
 }
 
 /* navbar颜色 */
@@ -431,7 +444,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(240, 240, 240, 0.4);
 }
 #context::-webkit-scrollbar {
     width: 5px;
@@ -441,6 +454,14 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
 }
 #context::-webkit-scrollbar-thumb {
     background-color: var(--global-active-light);
+}
+#context .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--global-context-bg);
+    color: var(--global-context-color);
 }
 
 /* 页面左侧工具栏 */
@@ -473,7 +494,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
 #left-tools > li:hover {
     background-color: var(--global-active-light);
 }
-#left-tools > li:hover:after {
+#left-tools > li:not(.search-tool):hover:after {
     position: absolute;
     left: 52px;
     top: 0;
@@ -485,7 +506,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     background-color: var(--global-active-light);
     color: #fff;
 }
-#left-tools > li:hover:before {
+#left-tools > li:not(.search-tool):hover:before, #left-tools > li.search-tool .search-box:before {
     position: absolute;
     left: 40px;
     top: 14px;
@@ -497,4 +518,25 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     border-color: transparent var(--global-active-light) transparent transparent;
     font-size: 0;
     content: '';
+}
+#left-tools > li.search-tool .search-box:before {
+    left: -12px;
+}
+#left-tools > li.search-tool .search-box {
+    position: absolute;
+    left: 52px;
+    top: 0;
+    width: 160px;
+    height: 40px;
+    background-color: var(--global-active-light);
+    display: none;
+}
+#left-tools > li.search-tool .search-box input {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 1px solid #eee;
+    height: 30px;
+    width: 150px;
+    padding: 0 7px;
 }

@@ -52,4 +52,12 @@ return [
         'forum'         => '论坛',
         'option'        => '设置',
     ],
+
+    'left_tools' => [
+        'my_game'       => '我的游戏',
+        'my_favorite'   => '我的最爱',
+        'change_bg'     => '更换背景',
+        'to_top'        => '回到顶部',
+        'search'        => '搜索你想要的'
+    ],
 ];

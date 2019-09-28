@@ -52,4 +52,12 @@ return [
         'forum'         => 'Forum',
         'option'        => 'Option',
     ],
+
+    'left_tools' => [
+        'my_game'       => 'My games',
+        'my_favorite'   => 'My favorites',
+        'change_bg'     => 'Change background',
+        'to_top'        => 'Back to top',
+        'search'        => 'Search what you want'
+    ],
 ];
