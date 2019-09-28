@@ -1,7 +1,5 @@
 <?php
 
-use App\Providers\ViewServiceProvider;
-
 return [
 
     /*
