@@ -2,8 +2,14 @@
 
 @section('active', 'news')
 
+@section('style')
+@endsection
+
 @section('content')
 	@parent
-    <div id="context" class="container">
+    <div id="context">
+        <div class="container">
+            helloworld
+        </div>
     </div>
 @endsection
