@@ -1,6 +1,7 @@
 @extends('layouts.module')
-
-@section('active', 'mine')
+@section($entityCode . '.active', 'active')
+@section('style')
+@endsection
 
 @section('content')
 	@parent

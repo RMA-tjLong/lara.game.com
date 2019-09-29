@@ -9,12 +9,6 @@
         @endcomponent
     @endif
 
-
     @include('public.left-tools')
-
-    @component('components.footer')
-        @slot('active')
-            @yield('active')
-        @endslot
-    @endcomponent
+    @include('public.footer')
 @endsection
