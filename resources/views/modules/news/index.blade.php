@@ -1,7 +1,5 @@
 @extends('layouts.module')
 
-@section('active', 'news')
-
 @section('style')
 @endsection
 

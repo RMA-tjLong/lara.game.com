@@ -14,7 +14,7 @@
 
     @component('components.footer')
         @slot('active')
-            @yield('active')
+            {{ $entityCode }}
         @endslot
     @endcomponent
 @endsection

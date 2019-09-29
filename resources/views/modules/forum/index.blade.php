@@ -1,7 +1,5 @@
 @extends('layouts.module')
 
-@section('active', 'forum')
-
 @section('style')
 <style type="text/css">
 </style>

@@ -1,7 +1,5 @@
 @extends('layouts.module')
 
-@section('active', 'mine')
-
 @section('content')
 	@parent
     <div id="context">
