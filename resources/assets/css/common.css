@@ -11,7 +11,9 @@
     --global-active-color: #0a4d6f;
     --global-light: #166ca5;
     --global-active-light: #46a4d4;
-    --global-context-bg: #214877;
+    --global-context-bg: #1b2838;
+    --global-context-light-bg: #223e5a;
+    --global-context-dark-color: #56707f;
     --global-context-color: #c6d4df;
 }
 
@@ -23,6 +25,7 @@ html,
 body {
     height: 100%;
     overflow: hidden;
+    font-family: "Motiva Sans";
 }
 html {
     -webkit-text-size-adjust: none;
@@ -94,6 +97,20 @@ textarea {
     outline: none;
     margin: 0px;
     padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 300;
 }
 
 /* 段落 */
@@ -462,6 +479,19 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     padding-bottom: 30px;
     background-color: var(--global-context-bg);
     color: var(--global-context-color);
+}
+#context a {
+    color: var(--global-context-color);
+}
+#context .context-header {
+    height: 120px;
+    padding: 0 15px;
+    background: linear-gradient(0deg, var(--global-context-light-bg), var(--global-context-bg));
+    font-size: 12px;
+    color: var(--global-context-dark-color);
+}
+#context .context-header .page-title {
+    color: #f0f0f0;
 }
 
 /* 页面左侧工具栏 */
