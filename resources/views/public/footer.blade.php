@@ -1,27 +1,27 @@
 <div id="footer">
     <ul class="link-box">
         <li>
-            <label class="@if($active == 'mine') active @endif">
+            <label class="@yield('mine.active')">
                 <a href="{{ route('mine.index') }}">{{ __('language.footer.mine') }}</a>
             </label>
         </li>
         <li>
-            <label class="@if($active == 'news') active @endif">
+            <label class="@yield('news.active')">
                 <a href="{{ route('news.index') }}">{{ __('language.footer.news') }}</a>
             </label>
         </li>
         <li>
-            <label class="@if($active == 'shop') active @endif">
+            <label class="@yield('shop.active')">
                 <a href="{{ route('shop.index') }}">{{ __('language.footer.shop') }}</a>
             </label>
         </li>
         <li>
-            <label class="@if($active == 'forum') active @endif">
+            <label class="@yield('forum.active')">
                 <a href="{{ route('forum.index') }}">{{ __('language.footer.forum') }}</a>
             </label>
         </li>
         <li>
-            <label class="@if($active == 'option') active @endif">
+            <label class="@yield('option.active')">
                 <a href="{{ route('option.index') }}">{{ __('language.footer.option') }}</a>
             </label>
         </li>
