@@ -14143,6 +14143,8 @@ readers do not read off random characters that represent icons */
     --global-context-light-bg: #223e5a;
     --global-context-dark-color: #56707f;
     --global-context-color: #c6d4df;
+
+    --global-body-min-width: 1000px;
 }
 
 * {
@@ -14253,6 +14255,7 @@ h6,
     top: 0;
     left: 0;
     width: 100%;
+    min-width: var(--global-body-min-width);
     height: 100%;
     background-position: center 10%;
     background-size: cover;
@@ -14507,6 +14510,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     right: 0;
     margin: auto;
     width: 100%;
+    min-width: var(--global-body-min-width);
     height: 50px;
     border-top: 1px solid #f0f2f5;
     color: #aaa;
@@ -14523,6 +14527,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     bottom: 0;
     left: 0;
     width: 100%;
+    min-width: var(--global-body-min-width);
     height: 100px;
     background-color: var(--global-color);
     z-index: 9999;
@@ -14533,7 +14538,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     left: 0;
     right: 0;
     margin: auto;
-    width: 40%;
+    width: 520px;
     height: 80px;
     display: flex;
 }
@@ -14587,6 +14592,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     bottom: 100px;
     left: 0;
     width: 100%;
+    min-width: var(--global-body-min-width);
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(240, 240, 240, 0.4);
