@@ -21,7 +21,12 @@
                 @endslot
             @endcomponent
 
-
+            @component('components.context-content')
+                @slot('content')
+                    <div class="col-xs-9" style="border: 1px solid #f00; height: 800px;"></div>
+                    <div class="col-xs-3" style="border: 1px solid #f0f; height: 300px;"></div>
+                @endslot
+            @endcomponent
         </div>
     </div>
 @endsection

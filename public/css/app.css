@@ -14141,6 +14141,7 @@ readers do not read off random characters that represent icons */
     --global-active-light: #46a4d4;
     --global-context-bg: #1b2838;
     --global-context-light-bg: #223e5a;
+    --global-context-light-active: #2b547d;
     --global-context-dark-color: #56707f;
     --global-context-color: #c6d4df;
 
@@ -14626,6 +14627,11 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
 }
 #context .context-header .page-title {
     color: #f0f0f0;
+}
+#context .context-content {
+    box-shadow: 0px -3px 3px -3px var(--global-context-bg);
+    background: linear-gradient(var(--global-context-light-active), var(--global-context-bg) 60px);
+    padding: 20px 15px 0;
 }
 
 /* 页面左侧工具栏 */
