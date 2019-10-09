@@ -115,9 +115,6 @@ h6,
 .h6 {
     font-weight: 300;
 }
-.clear-float {
-    clear: both;
-}
 
 /* 段落 */
 .p-text {

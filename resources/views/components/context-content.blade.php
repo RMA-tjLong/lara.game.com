@@ -1,6 +1,3 @@
-<div class="row">
-    <div class="context-content">
-        {{ $content }}
-        <div class="clear-float"></div>
-    </div>
+<div class="row context-content">
+    {{ $content }}
 </div>
