@@ -10,11 +10,12 @@
         "guzzlehttp/guzzle": "^6.3",
         "jrean/laravel-user-verification": "5.*",
         "laravel/framework": "5.5.*",
+        "laravel/horizon": "^2.0",
         "laravel/tinker": "~1.0",
         "mews/captcha": "^2.3",
         "nesbot/carbon": "^1.26.0",
         "predis/predis": "^1.1",
-        "laravel/horizon": "^2.0"
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
