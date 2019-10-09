@@ -14144,7 +14144,7 @@ readers do not read off random characters that represent icons */
     --global-context-dark-color: #56707f;
     --global-context-color: #c6d4df;
 
-    --global-body-min-width: 1000px;
+    --global-body-min-width: 750px;
 }
 
 * {
