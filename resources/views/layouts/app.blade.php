@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
     <!-- Self defined style -->
-    @yield('style')
+    @yield('styles')
 </head>
 <body>
     <div id="app" style="background: url({{ asset('image/default/simple-codelines.svg') }});">
@@ -127,5 +127,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/common.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

@@ -19,4 +19,8 @@ mix.styles([
     'resources/assets/css/common.css',
 ], 'public/css/app.css');
 
+mix.scripts([
+    'resources/assets/js/common/left-tools.js'
+], 'public/js/common.js');
+
 mix.copyDirectory('resources/assets/image', 'public/image');

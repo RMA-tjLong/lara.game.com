@@ -14695,6 +14695,12 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     background-color: var(--global-active-light);
     display: none;
 }
+#left-tools > li.search-tool.active {
+    background-color: var(--global-active-light);
+}
+#left-tools > li.search-tool.active .search-box {
+    display: block;
+}
 #left-tools > li.search-tool .search-box input {
     position: absolute;
     top: 5px;
