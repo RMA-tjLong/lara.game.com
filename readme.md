@@ -19,3 +19,18 @@ php artisan queue:work
 不出意外就可以运行了，当然最好设置一下hosts文件并且在apache上挂个虚拟域名
 
 我使用的是docker，详细配置见我的github项目有一个docker-compose
+
+
+【
+
+composer install
+
+删除数据表 roles user_roles
+
+删除对应的migrations文件
+
+php artisan cache:clear
+
+php artisan migrate
+
+】
