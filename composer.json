@@ -15,7 +15,7 @@
         "mews/captcha": "^2.3",
         "nesbot/carbon": "^1.26.0",
         "predis/predis": "^1.1",
-        "zizaco/entrust": "5.2.x-dev"
+        "zizaco/entrust": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

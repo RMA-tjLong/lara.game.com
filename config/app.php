@@ -180,6 +180,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Jrean\UserVerification\UserVerificationServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
     ],
 
     /*
@@ -231,6 +232,7 @@ return [
 
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];
