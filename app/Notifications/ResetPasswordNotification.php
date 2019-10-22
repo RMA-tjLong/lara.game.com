@@ -12,15 +12,17 @@ class ResetPasswordNotification extends Notification implements ShouldQueue
     use Queueable;
 
     public $token;
+    public $lang;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct($token, $lang)
     {
         $this->token = $token;
+        $this->lang = $lang;
     }
 
     /**
@@ -43,11 +45,12 @@ class ResetPasswordNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject(__('language.email.resetpw_notification_subject'))
-                    ->line(__('language.email.resetpw_notification_1st_line'))
-                    ->action(__('language.email.resetpw_notification_action'), url(config('app.url').route('password.reset', $this->token, false)))
-                    ->line(__('language.email.resetpw_notification_2nd_line'))
-                    ->line(__('language.email.resetpw_notification_3rd_line'));
+                    ->template('notifications::reset-password')
+                    ->subject(__('language.email.reset_password_subject', [], $this->lang))
+                    ->line(__('language.email.reset_password_1st_line', [], $this->lang))
+                    ->action('', url(config('app.url').route('password.reset', $this->token, false)))
+                    ->line(__('language.email.reset_password_2nd_line', [], $this->lang))
+                    ->line(__('language.email.reset_password_3rd_line', [], $this->lang));
     }
 
     /**

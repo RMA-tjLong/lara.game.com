@@ -31,10 +31,11 @@ class VerificateMailController
             'name' => $user->name,
             'about_link' => url('about'),
             'app_name' => config('app.name'),
+            'lang' => \App::getLocale()
         ];
 
         $bindings = [
-            'template'  => 'email.signup-email-verification-' . \App::getLocale(),
+            'template'  => 'email.signup-email-verification',
             'to'        => $user->email,
             'subject'   => __('language.email.verified_subject'),
             'assign'    => ['data' => $data]
