@@ -38,11 +38,17 @@ return [
 
     'email' => [
         'verified_subject'              => '请验证邮箱',
-        'resetpw_notification_subject'  => '重置密码',
-        'resetpw_notification_1st_line' => '我们发送了一个重置密码的请求到您的这个邮箱',
-        'resetpw_notification_2nd_line' => '如果您没有发起重置密码请求，则不需要进行任何操作',
-        'resetpw_notification_3rd_line' => '在地址栏复制并粘贴以下链接： ',
-        'resetpw_notification_action'   => '重置密码',
+        'verified_1st_line'             => '你好 ',
+        'verified_2nd_line'             => '尝试中的登陆需要进一步验证，因为我们不能识别您的设备。为了完成登录，请单击下面的链接来进行验证',
+        'verified_3rd_line'             => '验证链接： ',
+        'verified_4th_line'             => '如果您不尝试验证登陆, 您的密码可能被泄露',
+        'verified_5th_line'             => '如果要查看更多关于我们的信息，请点击 ',
+        'verified_6th_line'             => '谢谢，',
+        'verified_7th_line'             => '您的朋友 ',
+        'reset_password_subject'        => '重置密码',
+        'reset_password_1st_line'       => '我们发送了一个重置密码的请求到您的这个邮箱',
+        'reset_password_2nd_line'       => '如果您没有发起重置密码请求，则不需要进行任何操作',
+        'reset_password_3rd_line'       => '在地址栏复制并粘贴以下链接： ',
     ],
 
     'footer' => [

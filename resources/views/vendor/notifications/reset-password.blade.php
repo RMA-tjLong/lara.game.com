@@ -10,9 +10,4 @@
 @endforeach
 {{ $actionUrl }}
 <br><br><br>
-{{-- Salutation --}}
-@if (! empty($salutation))
-    {{ $salutation }}
-@else
-    {{ config('app.name') }}
-@endif
+{{ config('app.name') }}
