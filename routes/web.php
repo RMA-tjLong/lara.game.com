@@ -50,5 +50,5 @@ Route::group(['middleware' => 'auth'], function () {
     // 论坛
     Route::resource('modules/forum', 'Modules\ForumController');
     // 新闻
-    Route::resource('modules/news', 'Modules\NewsController');
+    Route::resource('modules/news', 'Modules\NewsController', ['only' => ['index', 'show']]);
 });
