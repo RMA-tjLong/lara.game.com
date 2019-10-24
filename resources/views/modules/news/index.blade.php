@@ -68,9 +68,7 @@
                     <a href="#">新闻</a>
                 @endslot
 
-                @slot('page_title')
-                    所有新闻
-                @endslot
+                @slot('page_title', '所有新闻')
             @endcomponent
 
             @component('components.context-content')
@@ -92,16 +90,8 @@
                                 </div>
 
                                 @component('components.share')
-                                    @slot('title')
-                                        Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off
-                                    @endslot
-
-                                    @slot('url')
-                                        https://store.steampowered.com/news/55388/
-                                    @endslot
-
-                                    @slot('img_address')
-                                    @endslot
+                                    @slot('url', 'https://store.steampowered.com/news/55388/')
+                                    @slot('title', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off')
                                 @endcomponent
                             </div>
                         </div>

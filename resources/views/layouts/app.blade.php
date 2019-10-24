@@ -90,27 +90,21 @@
         @if (session()->has('success'))
             <!-- 操作成功通知 -->
             @component('components.remind-successful')
-                @slot('text')
-                    {{ session()->pull('success') }}
-                @endslot
+                @slot('text', session()->pull('success'))
             @endcomponent
         @endif
 
         @if (session()->has('error'))
             <!-- 错误通知 -->
             @component('components.remind-error')
-                @slot('text')
-                    {{ session()->pull('error') }}
-                @endslot
+                @slot('text', session()->pull('error'))
             @endcomponent
         @endif
 
         @if (Auth::check() && !Auth()->user()->verified)
             <!-- 通过登录验证未激活邮件时 -->
             @component('components.warning-without-closebar')
-                @slot('title')
-                    {{ __('language.warning.email_verificate_title') }}
-                @endslot
+                @slot('title', __('language.warning.email_verificate_title'))
 
                 @slot('text')
                     <p class="p-text">
