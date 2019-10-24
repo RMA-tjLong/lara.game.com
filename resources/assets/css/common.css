@@ -588,3 +588,18 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     width: 150px;
     padding: 0 7px;
 }
+
+/* 页面分享按钮列表 */
+.share {
+    color: var(--global-context-dark-color);
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    clear: both;
+    line-height: 14px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px 8px 6px 8px;
+}
+.share a:first-child {
+    margin-left: 15px;
+}
