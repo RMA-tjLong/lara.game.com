@@ -23,6 +23,7 @@
 * {
     word-wrap: break-word;
     outline: none;
+    user-select: none;
 }
 html,
 body {
@@ -599,6 +600,9 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     line-height: 14px;
     background: rgba(0, 0, 0, 0.2);
     padding: 6px 8px 6px 8px;
+}
+.share a {
+    margin-left: 7px;
 }
 .share a:first-child {
     margin-left: 15px;

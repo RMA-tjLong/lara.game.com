@@ -66,4 +66,8 @@ return [
         'to_top'        => 'Back to top',
         'search'        => 'Search what you want'
     ],
+
+    'share' => [
+        'share_to'      => 'Share to'
+    ],
 ];

@@ -66,4 +66,8 @@ return [
         'to_top'        => '回到顶部',
         'search'        => '搜索你想要的'
     ],
+
+    'share' => [
+        'share_to'      => '分享到'
+    ],
 ];
