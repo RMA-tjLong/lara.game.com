@@ -3,9 +3,7 @@
 @section('content')
     @if (session()->has('status'))
         @component('components.remind-successful')
-            @slot('text')
-                {{ session()->pull('status') }}
-            @endslot
+            @slot('text', session()->pull('status'))
         @endcomponent
     @endif
 
