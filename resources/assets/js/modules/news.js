@@ -1,9 +1,8 @@
 const NewsTitle = {
-    'name'      : 'newsTitle',
     'element'   : $('#news .news-list .headline .news-title'),
-    'events'    : ['Click'],
+    'events'    : ['click'],
 
-    'newsTitleClickListener' : function () {
+    'clickListener' : function () {
         this.element.on('click', function () {
             $(this).parents('.news-list').find('.body-fold').removeClass('body-fold');
         });
@@ -12,9 +11,6 @@ const NewsTitle = {
 
 const News = {
     'elements' : [
-        {
-            'obj'   : NewsTitle,
-            'name'  : 'NewsTitle'
-        }
+        NewsTitle
     ]
 };

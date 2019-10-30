@@ -19,10 +19,11 @@ mix.styles([
     'resources/assets/css/common.css',
 ], 'public/css/app.css');
 
+mix.copy('resources/assets/js/helpers.js', 'public/js/helpers.js');
+
 mix.scripts([
-    'resources/assets/js/helpers.js',
     'resources/assets/js/modules/*',
-    'resources/assets/js/common.js'
-], 'public/js/common.js');
+    'resources/assets/js/index.js'
+], 'public/js/index.js');
 
 mix.copyDirectory('resources/assets/image', 'public/image');

@@ -1,11 +1,9 @@
 const SearchTool = {
-    'name'      : 'searchTool',
     'element'   : $('#left-tools .search-tool'),
-    'events'    : ['Click'],
+    'events'    : ['click'],
 
-    'searchToolClickListener' : function () {
+    'clickListener' : function () {
         this.element.on('click', function() {
-            // TODO:bug
             if ($(this).hasClass('active')) {
                 $(this).removeClass('active');
             } else {
@@ -15,11 +13,20 @@ const SearchTool = {
     }
 };
 
+const SearchBox = {
+    'element'   : $('#left-tools .search-tool .search-box'),
+    'events'    : ['click'],
+
+    'clickListener' : function() {
+        this.element.on('click',function(e) {
+            e.stopPropagation();
+        });
+    }
+};
+
 const LeftTools = {
     'elements' : [
-        {
-            'obj'   : SearchTool,
-            'name'  : 'SearchTool'
-        }
+        SearchTool,
+        SearchBox
     ]
 };
