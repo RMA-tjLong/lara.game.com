@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Modules;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Modules\NewsModel;
+use Illuminate\Contracts\Support\Jsonable;
 
 class NewsController extends Controller
 {
@@ -15,6 +16,17 @@ class NewsController extends Controller
     public function index()
     {
         return view('modules.' . $this->entityCode . '.index');
+    }
+
+    /**
+     * 通过分页获取数据
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getNewsByPagination()
+    {
+        $data = NewsModel::with('games')->paginate();
+        return $data;
     }
 
     /**
