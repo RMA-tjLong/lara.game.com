@@ -77,6 +77,7 @@
             border: 1px solid rgba( 255, 255, 255, 0.1);
             border-radius: 2px;
             padding: 4px 2px 4px 4px;
+            font-size: 12px;
         }
         .news-block .content .bar {
             padding-left: 12px;

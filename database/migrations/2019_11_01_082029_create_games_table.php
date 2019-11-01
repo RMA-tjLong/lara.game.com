@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsTable extends Migration
+class CreateGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('game_id')->comment('对应的游戏id');
-            $table->string('author', 32)->comment('新闻作者');
-            $table->string('title', 64)->comment('新闻标题');
-            $table->text('content')->comment('新闻内容');
+            $table->string('name', 64)->comment('游戏名称');
+            $table->integer('company_id')->comment('公司名称');
+            $table->string('head_img_url')->comment('游戏最小缩略图');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable()->comment('删除时间，如果存在则表示该条数据已被删除');
         });
@@ -31,6 +30,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('games');
     }
 }
