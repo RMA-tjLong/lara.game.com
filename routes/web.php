@@ -50,7 +50,5 @@ Route::group(['middleware' => 'auth'], function () {
     // 论坛
     Route::resource('modules/forum', 'Modules\ForumController');
     // 新闻
-    // TODO::移入api，并将对应接口放到api中实现
-    Route::get('modules/news/page', 'Modules\NewsController@getNewsByPagination')->name('modules.news.page');
     Route::resource('modules/news', 'Modules\NewsController', ['only' => ['index', 'show']]);
 });
