@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsSignaturesTable extends Migration
+class CreateNewsTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateNewsSignaturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_signatures', function (Blueprint $table) {
+        Schema::create('news_tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 32)->comment('标签名');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateNewsSignaturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_signatures');
+        Schema::dropIfExists('news_tags');
     }
 }

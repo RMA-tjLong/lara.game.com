@@ -19,17 +19,6 @@ class NewsController extends Controller
     }
 
     /**
-     * 通过分页获取数据
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function getNewsByPagination()
-    {
-        $data = NewsModel::with('games')->paginate();
-        return $data;
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
