@@ -15,7 +15,7 @@ class NewsApiController extends Controller
     public function getNewsByPagination()
     {
         $data = NewsModel::with('games')->paginate();
-        return $data;
+        return ajax_return_success($data);
     }
 }
 
