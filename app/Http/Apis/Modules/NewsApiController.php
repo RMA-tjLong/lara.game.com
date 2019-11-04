@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Apis;
+namespace App\Http\Apis\Modules;
 
 use App\Models\Modules\NewsModel;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Apis\Controller;
 
 class NewsApiController extends Controller
 {
