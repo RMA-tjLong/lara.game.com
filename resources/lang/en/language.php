@@ -34,6 +34,7 @@ return [
         'email_verificate_text'     => 'To keep your account secure, please go :email_address as soon as possible to activate your registered email address. Didn\'t receive the email? Please click the link below to resend the message',
         'send_success'              => 'Send successfully',
         'invalid_token'             => 'Invalid token',
+        'validate_success'          => 'Validate successfully',
     ],
 
     'email' => [

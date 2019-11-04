@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
-use App\Models\Modules\NewsModel;
-use Illuminate\Contracts\Support\Jsonable;
 
 class NewsController extends Controller
 {

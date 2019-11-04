@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::group(['prefix' => 'v1'], function() {
-    Route::get('news', 'Apis\NewsApiController@getNewsByPagination')->name('api.news');
+Route::group(['prefix' => 'v1'], function () {
+    Route::get('news', 'Modules\NewsApiController@getNewsByPagination')->name('api.news');
 });

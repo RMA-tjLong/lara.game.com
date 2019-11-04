@@ -83,6 +83,7 @@ class VerificateMailController
         $users->verified_at = Carbon::now();
         $users->save();
 
+        session()->put('success', __('language.warning.validate_success'));
         return redirect('/');
     }
 }

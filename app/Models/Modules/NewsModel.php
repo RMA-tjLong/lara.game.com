@@ -2,9 +2,9 @@
 
 namespace App\Models\Modules;
 
-use App\Models\BaseModel;
+use App\Models\Model;
 
-class NewsModel extends BaseModel
+class NewsModel extends Model
 {
     protected $table = 'news';
 

@@ -2,9 +2,9 @@
 
 namespace App\Models\Modules;
 
-use App\Models\BaseModel;
+use App\Models\Model;
 
-class GamesModel extends BaseModel
+class GamesModel extends Model
 {
     protected $table = 'games';
 }
