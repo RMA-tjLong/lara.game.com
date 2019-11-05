@@ -19,6 +19,6 @@ class VerifyAjaxRequest
             return $next($request);
         }
 
-        return \Response::json(ajax_return_error());
+        return \Response::json(ajax_return_error('10002'));
     }
 }
