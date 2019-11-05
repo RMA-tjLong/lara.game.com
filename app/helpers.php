@@ -1,10 +1,10 @@
 <?php
 
 if (!function_exists('ajax_return_error')) {
-    function ajax_return_error($code = 10001, $msg = '')
+    function ajax_return_error($code = '10001', $msg = '')
     {
         if (!$msg) {
-            // TODO: $msg 根据 $code 的值来定并返回
+            $msg = config('msg.' . $code);
         }
 
         return [
