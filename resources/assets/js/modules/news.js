@@ -9,8 +9,21 @@ const NewsTitle = {
     }
 };
 
+const NewsContext = {
+    'element'   : $('#context[news-context]'),
+    'events'    : ['scroll'],
+
+    'scrollListener' : function() {
+        this.element.scroll(function() {
+            if ($(this).scrollTop() >= $(this).prop('scrollHeight') - $(this).height()) {
+            }
+        });
+    }
+};
+
 const News = {
     'elements' : [
-        NewsTitle
+        NewsTitle,
+        NewsContext,
     ]
 };
