@@ -47,8 +47,23 @@ const NewsContext = {
     'events'    : ['scroll'],
 
     'scrollListener' : function() {
+        NewsContext.load();
         this.element.scroll(function() {
             if ($(this).scrollTop() >= $(this).prop('scrollHeight') - $(this).height()) {
+                NewsContext.load();
+            }
+        });
+    },
+
+    'load'          : function() {
+        $.ajax({
+            url         : typeof api_news !== 'undefined' ? api_news : '',
+            type        : 'GET',
+            dataType    : 'json',
+            success     : function(data) {
+                if (data.status && data.data) {
+                    NewsContext.element.find('#news').append(1111);
+                }
             }
         });
     }

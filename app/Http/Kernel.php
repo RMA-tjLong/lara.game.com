@@ -33,7 +33,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            'csrf',
+            \App\Http\Middleware\VerifyCsrfToken::class,
             'bindings',
 
             // 语言中间件
@@ -43,8 +43,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            'ajax',
-            'csrf',
+            \App\Http\Middleware\VerifyAjaxRequest::class,
         ],
     ];
 
@@ -65,7 +64,5 @@ class Kernel extends HttpKernel
         'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
         'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
-        'ajax' => \App\Http\Middleware\VerifyAjaxRequest::class,
-        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
     ];
 }
