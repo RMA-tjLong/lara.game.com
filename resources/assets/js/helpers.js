@@ -1,9 +1,9 @@
 // 重写 jQuery ajax 方法
 (function($) {
-    var _ajax = $.ajax;
+    let _ajax = $.ajax;
 
     $.ajax = function(opt) {
-        var _opt = $.extend(opt, {
+        let _opt = $.extend(opt, {
             headers : {
             },
         });
@@ -13,6 +13,27 @@
 })(jQuery);
 
 // 替换 share 的 url 与 title
-function assemble_share(url, title) {
-    return share.replace(/%url%/g, url).replace(/%title%/g, title);
-}
+(function($) {
+    let share = $('#template-share').html();
+
+    $.assembleShare = function(id, title) {
+        return share.replace(/%id%/g, id).replace(/%title%/g, title);
+    };
+})(jQuery);
+
+// 解析 url 参数
+(function($) {
+    let re = /([^&=]+)=?([^&]*)/g,
+        decodeRE = /\+/g,
+        decode = function (str) {
+            return decodeURIComponent(str.replace(decodeRE, " "));
+        };
+
+    $.parseParams = function(query) {
+        query = query.split('?')[1] || '';
+        let params = {}, e;
+
+        while (e = re.exec(query)) params[decode(e[1])] = decode(e[2]);
+        return params;
+    };
+})(jQuery);

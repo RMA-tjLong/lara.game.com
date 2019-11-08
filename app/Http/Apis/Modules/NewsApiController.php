@@ -14,14 +14,16 @@ class NewsApiController extends Controller
      */
     public function getNewsByPagination()
     {
-        $data = NewsModel::with(['games' => function($query) {
-                $query->with(['game_titles' => function($query) {
-                    $query->where('locale_id', 1);
+        $filter = ['locale_id' => $this->locale_id];
+
+        $data = NewsModel::with(['games' => function($query) use ($filter) {
+                $query->with(['game_titles' => function($query) use ($filter) {
+                    $query->where($filter);
                 }]);
-            }, 'contents' => function($query) {
-                $query->where('locale_id', 1);
-            }, 'titles' => function($query) {
-                $query->where('locale_id', 1);
+            }, 'contents' => function($query) use ($filter) {
+                $query->where($filter);
+            }, 'titles' => function($query) use ($filter) {
+                $query->where($filter);
             }])->paginate();
 
         return ajax_return_success($data);

@@ -14,8 +14,8 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer(
-            ['modules.*'],
-            'App\Services\ModuleComposerService'
+            '*',
+            'App\Services\ComposerService'
         );
     }
 

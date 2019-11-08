@@ -185,6 +185,6 @@
 @section('scripts')
     @parent
     <script>
-        var api_news = "{{ route('api.news') }}";
+        var news_api_url = "{{ route('api.news') }}";
     </script>
 @endsection

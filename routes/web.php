@@ -13,10 +13,7 @@
 
 // 切换语言
 Route::get('lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'zh-CN'])) {
-        \Cookie::queue(\Cookie::forever('lang', $locale));
-    }
-    
+    \Cookie::queue(\Cookie::forever('lang', $locale));
     return back()->withInput();
 });
 

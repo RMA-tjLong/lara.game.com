@@ -14,22 +14,34 @@ const NewsContext = {
     'events'    : ['scroll'],
 
     'scrollListener' : function() {
-        NewsContext.load();
-        this.element.scroll(function() {
+        let page = 1;
+        NewsContext.load(page);
+        this.element.on('scroll', function() {
             if ($(this).scrollTop() >= $(this).prop('scrollHeight') - $(this).height()) {
-                NewsContext.load();
+                NewsContext.load(++page);
             }
         });
     },
 
-    'load'          : function() {
+    'scrollOff'     : function() {
+        this.element.off('scroll');
+    },
+
+    'load'          : function(page) {
         $.ajax({
-            url         : typeof api_news !== 'undefined' ? api_news : '',
+            url         : typeof news_api_url !== 'undefined' ? news_api_url : '',
             type        : 'GET',
+            data        : {
+                'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src),
+                'page'  : page
+            },
             dataType    : 'json',
             success     : function(data) {
+                if (!data.status) return false;
+
                 let res = data.data.data;
-                if (data.status && res) {
+
+                if (res.length) {
                     let str = '';
 
                     res.forEach(function(item) {
@@ -39,20 +51,23 @@ const NewsContext = {
                                         '<img class="capsule" src="' + item.games.head_img_url + '">' +
                                         '<div class="headline">' +
                                             '<div class="date">' + item.created_at + '</div>' +
-                                            '<div class="news-title"><a href="javascript:void(0);">' + item.title + '</a></div>' +
+                                            '<div class="news-title"><a href="javascript:void(0);">' + item.titles[0].title + '</a></div>' +
                                         '</div>' +
-                                        '<div class="feed">' + item.games.name + ' - ' + item.author + '</div>' +
+                                        '<div class="feed">' + item.games.game_titles[0].title + ' - ' + item.author + '</div>' +
                                         '<div style="clear: both;"></div>' +
-                                        '<div class="body body-fold">' + item.content + '</div>' +
-                                        assemble_share('https://store.steampowered.com/news/55388/', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off\'') +
+                                        '<div class="body body-fold">' + item.contents[0].content + '</div>' +
+                                        $.assembleShare(item.id, item.titles[0].title) +
                                         '<div style="clear: both;"></div>' +
                                     '</div>' +
                                 '</div>';
                     });
 
                     NewsContext.element.find('#news').append(str);
+                } else {
+                    NewsContext.scrollOff();
                 }
             }
+
         });
     }
 };
