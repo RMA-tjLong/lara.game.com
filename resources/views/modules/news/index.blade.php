@@ -129,106 +129,7 @@
 
             @component('components.context-content')
                 @slot('content')
-                    <div id="news" class="col-xs-9">
-                        <div class="news-hr"></div>
-                        <div id="news_[序号]">
-                            <div class="news-list steam_announce">
-                                <img class="capsule" src="[游戏抬头缩略图]">
-                                <div class="headline">
-                                    <div class="date">[发布时间]</div>
-                                    <div class="news-title"><a href="javascript:void(0);">[标题]测试长度测试长度</a></div>
-                                </div>
-                                <div class="feed">[游戏名称] - [新闻作者]</div>
-                                <div style="clear: both;"></div>
-                                <div class="body body-fold">
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                    <br>
-                                    <img src="https://steamcdn-a.akamaihd.net/steam/apps/812040/capsule_467x181.jpg">
-                                    <br>
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                </div>
-                                @component('components.share')
-                                    @slot('url', 'https://store.steampowered.com/news/55388/')
-                                    @slot('title', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off')
-                                @endcomponent
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-
-                        <div class="news-hr"></div>
-                        <div id="news_[序号]">
-                            <div class="news-list steam_announce">
-                                <img class="capsule" src="[游戏抬头缩略图]">
-                                <div class="headline">
-                                    <div class="date">[发布时间]</div>
-                                    <div class="news-title"><a href="javascript:void(0);">[标题]测试长度测试长度</a></div>
-                                </div>
-                                <div class="feed">[游戏名称] - [新闻作者]</div>
-                                <div style="clear: both;"></div>
-                                <div class="body body-fold">
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                    <br>
-                                    <img src="https://steamcdn-a.akamaihd.net/steam/apps/812040/capsule_467x181.jpg">
-                                    <br>
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                </div>
-                                @component('components.share')
-                                    @slot('url', 'https://store.steampowered.com/news/55388/')
-                                    @slot('title', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off')
-                                @endcomponent
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-
-                        <div class="news-hr"></div>
-                        <div id="news_[序号]">
-                            <div class="news-list steam_announce">
-                                <img class="capsule" src="[游戏抬头缩略图]">
-                                <div class="headline">
-                                    <div class="date">[发布时间]</div>
-                                    <div class="news-title"><a href="javascript:void(0);">[标题]测试长度测试长度</a></div>
-                                </div>
-                                <div class="feed">[游戏名称] - [新闻作者]</div>
-                                <div style="clear: both;"></div>
-                                <div class="body body-fold">
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                    <br>
-                                    <img src="https://steamcdn-a.akamaihd.net/steam/apps/812040/capsule_467x181.jpg">
-                                    <br>
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                </div>
-                                @component('components.share')
-                                    @slot('url', 'https://store.steampowered.com/news/55388/')
-                                    @slot('title', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off')
-                                @endcomponent
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="news" class="col-xs-9"></div>
 
                     <div id="news-menu" class="col-xs-3">
                         <div class="news-block">
@@ -279,4 +180,11 @@
             @endcomponent
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script>
+        var api_news = "{{ route('api.news') }}";
+    </script>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamesTable extends Migration
+class CreateLanguageConfigTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('language_config_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('company_id')->comment('对应的公司id');
-            $table->string('head_img_url')->comment('游戏最小缩略图');
+            $table->string('name', 32)->comment('分类名');
             $table->timestamps();
-            $table->timestamp('deleted_at')->nullable()->comment('删除时间，如果存在则表示该条数据已被删除');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('language_config_types');
     }
 }

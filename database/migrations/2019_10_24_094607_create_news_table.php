@@ -17,8 +17,6 @@ class CreateNewsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('game_id')->comment('对应的游戏id');
             $table->string('author', 32)->comment('新闻作者');
-            $table->string('title', 64)->comment('新闻标题');
-            $table->text('content')->comment('新闻内容');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable()->comment('删除时间，如果存在则表示该条数据已被删除');
         });
