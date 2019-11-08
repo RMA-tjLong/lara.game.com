@@ -4,11 +4,11 @@ namespace App\Models\Modules;
 
 use App\Models\Model;
 
-class GamesModel extends Model
+class GameTitlesModel extends Model
 {
-    protected $table = 'games';
+    protected $table = 'game_titles';
 
-    public function game_titles()
+    public function games()
     {
         return $this->hasMany('App\Models\Modules\GameTitlesModel', 'game_id', 'id');
     }

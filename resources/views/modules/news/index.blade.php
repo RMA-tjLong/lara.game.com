@@ -129,78 +129,7 @@
 
             @component('components.context-content')
                 @slot('content')
-                    <div id="news" class="col-xs-9">
-
-
-                        <div class="news-hr"></div>
-                        <div id="news_[序号]">
-                            <div class="news-list steam_announce">
-                                <img class="capsule" src="[游戏抬头缩略图]">
-                                <div class="headline">
-                                    <div class="date">[发布时间]</div>
-                                    <div class="news-title"><a href="javascript:void(0);">[标题]测试长度测试长度</a></div>
-                                </div>
-                                <div class="feed">[游戏名称] - [新闻作者]</div>
-                                <div style="clear: both;"></div>
-                                <div class="body body-fold">
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                    <br>
-                                    <img src="https://steamcdn-a.akamaihd.net/steam/apps/812040/capsule_467x181.jpg">
-                                    <br>
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                </div>
-                                <div class="share">
-                                    分享：
-                                    <a href="http://www.facebook.com/sharer.php?u={{ $url }}&t={{ $title }}" target="_blank" title="{{ __('language.share.share_to') }} Facebook"><img src="{{ asset('image/icons/facebook.gif') }}"></a>
-                                    <a href="https://twitter.com/intent/tweet?url={{ $url }}&text={{ $title }}" target="_blank" title="{{ __('language.share.share_to') }} Twitter"><img src="{{ asset('image/icons/twitter.gif') }}"></a>
-                                    <a href="http://service.weibo.com/share/share.php?url={{ $url }}&title={{ $title }}" target="_blank" title="{{ __('language.share.share_to') }} 新浪微博"><img src="{{ asset('image/icons/sina.gif') }}"></a>
-                                    <a href="https://plus.google.com/share?url={{ $url }}" target="_blank" title="{{ __('language.share.share_to') }} Google+"><img src="{{ asset('image/icons/google.gif') }}"></a>
-                                </div>
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-
-                        <div class="news-hr"></div>
-                        <div id="news_[序号]">
-                            <div class="news-list steam_announce">
-                                <img class="capsule" src="[游戏抬头缩略图]">
-                                <div class="headline">
-                                    <div class="date">[发布时间]</div>
-                                    <div class="news-title"><a href="javascript:void(0);">[标题]测试长度测试长度</a></div>
-                                </div>
-                                <div class="feed">[游戏名称] - [新闻作者]</div>
-                                <div style="clear: both;"></div>
-                                <div class="body body-fold">
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                    <br>
-                                    <img src="https://steamcdn-a.akamaihd.net/steam/apps/812040/capsule_467x181.jpg">
-                                    <br>
-                                    [用户自定的富文本编辑的内容]测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度测试长度测试长度测试
-                                    长度测试长度测试长度测试长度测试长度
-                                </div>
-                                @component('components.share')
-                                    @slot('url', 'https://store.steampowered.com/news/55388/')
-                                    @slot('title', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off')
-                                @endcomponent
-                                <div style="clear: both;"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="news" class="col-xs-9"></div>
 
                     <div id="news-menu" class="col-xs-3">
                         <div class="news-block">

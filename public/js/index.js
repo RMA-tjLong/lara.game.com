@@ -61,8 +61,29 @@ const NewsContext = {
             type        : 'GET',
             dataType    : 'json',
             success     : function(data) {
-                if (data.status && data.data) {
-                    NewsContext.element.find('#news').append(1111);
+                let res = data.data.data;
+                if (data.status && res) {
+                    let str = '';
+
+                    res.forEach(function(item) {
+                        str +=  '<div class="news-hr"></div>' +
+                                '<div id="news_' + item.id + '">' +
+                                    '<div class="news-list steam_announce">' +
+                                        '<img class="capsule" src="' + item.games.head_img_url + '">' +
+                                        '<div class="headline">' +
+                                            '<div class="date">' + item.created_at + '</div>' +
+                                            '<div class="news-title"><a href="javascript:void(0);">' + item.title + '</a></div>' +
+                                        '</div>' +
+                                        '<div class="feed">' + item.games.name + ' - ' + item.author + '</div>' +
+                                        '<div style="clear: both;"></div>' +
+                                        '<div class="body body-fold">' + item.content + '</div>' +
+                                        assemble_share('https://store.steampowered.com/news/55388/', 'Daily+Deal+-+Shortest+Trip+to+Earth%2C+33%25+Off\'') +
+                                        '<div style="clear: both;"></div>' +
+                                    '</div>' +
+                                '</div>';
+                    });
+
+                    NewsContext.element.find('#news').append(str);
                 }
             }
         });
