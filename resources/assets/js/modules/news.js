@@ -23,13 +23,9 @@ const NewsContext = {
         });
     },
 
-    'scrollOff'     : function() {
-        this.element.off('scroll');
-    },
-
     'load'          : function(page) {
         $.ajax({
-            url         : typeof news_api_url !== 'undefined' ? news_api_url : '',
+            url         : $.compileTemplateRoute().apis.news,
             type        : 'GET',
             data        : {
                 'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src),
@@ -56,7 +52,7 @@ const NewsContext = {
                                         '<div class="feed">' + item.games.game_titles[0].title + ' - ' + item.author + '</div>' +
                                         '<div style="clear: both;"></div>' +
                                         '<div class="body body-fold">' + item.contents[0].content + '</div>' +
-                                        $.assembleShare(item.id, item.titles[0].title) +
+                                        $.compileTemplateShare(item.id, item.titles[0].title) +
                                         '<div style="clear: both;"></div>' +
                                     '</div>' +
                                 '</div>';
@@ -64,7 +60,7 @@ const NewsContext = {
 
                     NewsContext.element.find('#news').append(str);
                 } else {
-                    NewsContext.scrollOff();
+                    NewsContext.element.off('scroll');
                 }
             }
 

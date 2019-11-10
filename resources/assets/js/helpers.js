@@ -16,9 +16,16 @@
 (function($) {
     let share = $('#template-share').html();
 
-    $.assembleShare = function(id, title) {
+    $.compileTemplateShare = function(id, title) {
         return share.replace(/%id%/g, id).replace(/%title%/g, title);
     };
+})(jQuery);
+
+// 编译 route
+(function($) {
+    $.compileTemplateRoute = function() {
+        return JSON.parse($('#template-route').html());
+    }
 })(jQuery);
 
 // 解析 url 参数

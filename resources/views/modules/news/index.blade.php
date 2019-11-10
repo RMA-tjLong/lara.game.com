@@ -181,10 +181,3 @@
         </div>
     </div>
 @endsection
-
-@section('scripts')
-    @parent
-    <script>
-        var news_api_url = "{{ route('api.news') }}";
-    </script>
-@endsection
