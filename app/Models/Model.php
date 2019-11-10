@@ -14,7 +14,7 @@ class Model extends BaseModel
         parent::__construct($attributes);
 
         // TODO::用户自定义设置可以设置列表的数据每页所显示的数目
-        $this->setPerPage(2);
+        $this->setPerPage(1);
     }
 
     protected $dates = ['deleted_at'];
