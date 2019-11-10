@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateForeignKeyToNewsContentsTable extends Migration
+class CreateNewsTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class UpdateForeignKeyToNewsContentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('news_contents', function (Blueprint $table) {
-            $table->foreign('news_id')->references('id')->on('news')
-                ->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('news_tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->timestamp('deleted_at')->nullable()->comment('删除时间，如果存在则表示该条数据已被删除');
         });
     }
 
@@ -26,8 +27,6 @@ class UpdateForeignKeyToNewsContentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('news_contents', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('news_tags');
     }
 }

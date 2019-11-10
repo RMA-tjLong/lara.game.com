@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateForeignKeyToNewsTable extends Migration
+class CreateNewsToTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class UpdateForeignKeyToNewsTable extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->foreign('game_id')->references('id')->on('games')
-                ->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('news_to_tags', function (Blueprint $table) {
+            $table->unsignedInteger('news_id')->comment('对应的新闻id');
+            $table->unsignedInteger('tag_id')->comment('对应的标签id');
         });
     }
 
@@ -26,8 +26,6 @@ class UpdateForeignKeyToNewsTable extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->dropForeign(['game_id']);
-        });
+        Schema::dropIfExists('news_to_tags');
     }
 }
