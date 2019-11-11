@@ -14,7 +14,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('modules.' . $this->entityCode . '.index');
+        return view('modules.' . $this->entity_code . '.index');
     }
 
     /**

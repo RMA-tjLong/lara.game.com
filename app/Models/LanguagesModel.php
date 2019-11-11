@@ -11,9 +11,8 @@ class LanguagesModel extends Model
      *
      * @return integer
      */
-    public static function getLocaleId($code = '')
+    public static function getLocaleId($code)
     {
-        $code = $code ? : \App::getLocale();
         return LanguagesModel::where('code', $code)->first()->id;
     }
 }

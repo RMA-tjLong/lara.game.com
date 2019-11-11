@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Http\Controller as BaseController;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    protected $entityCode;
+    protected $entity_code;
 
     /**
      * 公共预处理
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-    	$this->entityCode = strtolower(preg_replace('~Controller(?!.*Controller)~', '', class_basename($this)));
+        parent::__construct($request);
+
+    	$this->entity_code = strtolower(preg_replace('~Controller(?!.*Controller)~', '', class_basename($this)));
 
         view()->composer(['modules.*'], function (View $view) {
-            $view->with('entityCode', $this->entityCode);
+            $view->with([
+                'entity_code' => $this->entity_code
+            ]);
         });
     }
 }
