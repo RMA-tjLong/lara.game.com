@@ -140,7 +140,11 @@
                                 <a class="bar" href="#">全部频道</a>
 
                                 <div class="sub-channel">{{ __('language.news.comprehensive_news') }}</div>
-                                <a class="bar" href="#">测试频道</a>
+                                @foreach($news_tags['comprehensive'] as $tag)
+                                    @if($tag['tag_titles']->count())
+                                    <a class="bar" href="">{{ $tag['tag_titles'][0]->title }}</a>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
 
