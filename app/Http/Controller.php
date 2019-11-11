@@ -18,6 +18,6 @@ class Controller extends BaseController
     public function __construct(Request $request)
     {
         $lang = $request->input('lang') ? : \App::getLocale();
-        $this->locale_id = LanguagesModel::getLocaleId($lang);
+        $this->locale_id = LanguagesModel::where('code', $lang)->first()->id;
     }
 }

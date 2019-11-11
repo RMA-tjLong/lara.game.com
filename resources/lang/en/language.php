@@ -69,7 +69,8 @@ return [
     ],
 
     'news' => [
-        'comprehensive_news' => 'Comprehensive news',
+        'channels'              => 'Channels',
+        'comprehensive_news'    => 'Comprehensive news',
     ],
 
     'share' => [
