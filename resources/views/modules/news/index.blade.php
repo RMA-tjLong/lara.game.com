@@ -133,7 +133,7 @@
 
                     <div id="news-menu" class="col-xs-3">
                         <div class="news-block">
-                            <div class="header">频道</div>
+                            <div class="header">{{ __('language.news.channels') }}</div>
                             <div class="content">
                                 <a class="bar" href="#">全部频道</a>
                                 <a class="bar active" href="#">全部频道</a>

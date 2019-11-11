@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Tags\NewsTagsModel;
 
 class NewsController extends Controller
 {
@@ -11,6 +12,11 @@ class NewsController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
+
+        $news_tags = NewsTagsModel::with('tag_titles')
+                ->orderByDesc('sort')
+                ->get()->toArray();
+        print_r($news_tags);exit;
     }
 
     /**

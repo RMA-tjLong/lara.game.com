@@ -69,7 +69,8 @@ return [
     ],
 
     'news' => [
-        'comprehensive_news' => '综合新闻',
+        'channels'              => '频道',
+        'comprehensive_news'    => '综合新闻',
     ],
 
     'share' => [
