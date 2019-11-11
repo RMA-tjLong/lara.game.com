@@ -3,9 +3,16 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+
+    public function __construct(Request $request)
+    {
+        parent::__construct($request);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('modules.' . $this->entityCode . '.index');
+        return view('modules.' . $this->entity_code . '.index');
     }
 
     /**

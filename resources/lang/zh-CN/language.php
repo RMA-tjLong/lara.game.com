@@ -68,6 +68,10 @@ return [
         'search'        => '搜索你想要的'
     ],
 
+    'news' => [
+        'comprehensive_news' => '综合新闻',
+    ],
+
     'share' => [
         'share_to'      => '分享到'
     ],

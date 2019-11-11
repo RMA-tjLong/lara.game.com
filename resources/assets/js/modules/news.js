@@ -1,9 +1,10 @@
 const NewsTitle = {
+    'eleStr'    : '#news .news-list .headline .news-title',
     'element'   : $('#news .news-list .headline .news-title'),
     'events'    : ['click'],
 
     'clickListener' : function () {
-        this.element.on('click', function () {
+        $(document).delegate(NewsTitle.eleStr, 'click', function () {
             $(this).parents('.news-list').find('.body-fold').removeClass('body-fold');
         });
     }

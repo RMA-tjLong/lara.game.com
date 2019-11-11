@@ -1,5 +1,5 @@
 @extends('layouts.module')
-@section($entityCode . '.active', 'active')
+@section($entity_code . '.active', 'active')
 @section('styles')
     @parent
     <style>
@@ -139,8 +139,8 @@
                                 <a class="bar active" href="#">全部频道</a>
                                 <a class="bar" href="#">全部频道</a>
 
-                                <div class="sub-channel">综合新闻</div>
-                                <a class="bar" href="#">全部频道</a>
+                                <div class="sub-channel">{{ __('language.news.comprehensive_news') }}</div>
+                                <a class="bar" href="#">测试频道</a>
                             </div>
                         </div>
 

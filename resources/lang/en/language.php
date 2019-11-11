@@ -68,6 +68,10 @@ return [
         'search'        => 'Search what you want'
     ],
 
+    'news' => [
+        'comprehensive_news' => 'Comprehensive news',
+    ],
+
     'share' => [
         'share_to'      => 'Share to'
     ],
