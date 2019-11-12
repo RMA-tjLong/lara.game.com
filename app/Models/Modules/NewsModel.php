@@ -8,18 +8,18 @@ class NewsModel extends Model
 {
     protected $table = 'news';
 
-    public function games()
+    public function relate_games()
     {
-        return $this->belongsTo('App\Models\Modules\GamesModel', 'game_id', 'id');
+        return $this->belongsTo(\App\Models\Modules\GamesModel::class, 'game_id', 'id');
     }
 
-    public function titles()
+    public function relate_news_titles()
     {
-        return $this->hasMany('App\Models\Modules\NewsTitlesModel', 'news_id', 'id');
+        return $this->hasMany(\App\Models\Modules\NewsTitlesModel::class, 'news_id', 'id');
     }
 
-    public function contents()
+    public function relate_news_contents()
     {
-        return $this->hasMany('App\Models\Modules\NewsContentsModel', 'news_id', 'id');
+        return $this->hasMany(\App\Models\Modules\NewsContentsModel::class, 'news_id', 'id');
     }
 }

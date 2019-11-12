@@ -8,8 +8,8 @@ class GamesModel extends Model
 {
     protected $table = 'games';
 
-    public function game_titles()
+    public function relate_game_titles()
     {
-        return $this->hasMany('App\Models\Modules\GameTitlesModel', 'game_id', 'id');
+        return $this->hasMany(\App\Models\Modules\GameTitlesModel::class, 'game_id', 'id');
     }
 }

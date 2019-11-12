@@ -13,14 +13,18 @@ class NewsController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
+    }
 
+    public function beforeAction()
+    {
         // 读取频道并分类
+        $this->setLocaleId();
         $locale_id = $this->locale_id;
-        $news_tags = NewsTagsModel::with(['tag_titles' => function($query) use ($locale_id) {
+        $news_tags = NewsTagsModel::with(['relate_news_tag_titles' => function($query) use ($locale_id) {
             $query->where('locale_id', $locale_id);
         }])
-                ->orderByDesc('sort')
-                ->get();
+            ->orderByDesc('sort')
+            ->get();
         $arr = [
             'comprehensive' => [],
             'others' => []
@@ -30,7 +34,7 @@ class NewsController extends Controller
             if ($news_tag['is_comprehensive']) {
                 $arr['comprehensive'][] = $news_tag;
             } else {
-                $arr['others'][] = $news_tags;
+                $arr['others'][] = $news_tag;
             }
         }
 

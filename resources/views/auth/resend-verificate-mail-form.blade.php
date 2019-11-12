@@ -29,7 +29,7 @@
                             <label for="captcha" class="col-md-3 control-label">{{ __('language.auth.captcha') }}</label>
                             <div class="col-md-7 captcha-group">
                                 <input id="captcha"  class="form-control captcha-ipt" type="captcha" name="captcha" value="{{ old('captcha')  }}" required>
-                                @if($errors->has('captcha'))
+                                @if ($errors->has('captcha'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('captcha') }}</strong>
                                 </span>
