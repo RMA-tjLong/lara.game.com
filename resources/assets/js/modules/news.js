@@ -29,7 +29,7 @@ const NewsContext = {
             url         : $.compileTemplateRoute().apis.news,
             type        : 'GET',
             data        : {
-                'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src),
+                'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src).lang,
                 'page'  : page
             },
             dataType    : 'json',
@@ -41,6 +41,7 @@ const NewsContext = {
                 if (res.length) {
                     let str = '';
 
+                    // TODO: 改所读取的字段
                     res.forEach(function(item) {
                         str +=  '<div class="news-hr"></div>' +
                                 '<div id="news_' + item.id + '">' +

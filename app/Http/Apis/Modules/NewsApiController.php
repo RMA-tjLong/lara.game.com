@@ -7,6 +7,11 @@ use App\Http\Apis\Controller;
 
 class NewsApiController extends Controller
 {
+    public function beforeAction()
+    {
+        $this->setLocaleId();
+    }
+
     /**
      * 通过分页获取数据
      *
@@ -16,13 +21,14 @@ class NewsApiController extends Controller
     {
         $filter = ['locale_id' => $this->locale_id];
 
-        $data = NewsModel::with(['games' => function($query) use ($filter) {
-                $query->with(['game_titles' => function($query) use ($filter) {
+        // TODO: 将 locale_id 写到 model
+        $data = NewsModel::with(['relate_games' => function($query) use ($filter) {
+                $query->with(['relate_game_titles' => function($query) use ($filter) {
                     $query->where($filter);
                 }]);
-            }, 'contents' => function($query) use ($filter) {
+            }, 'relate_news_contents' => function($query) use ($filter) {
                 $query->where($filter);
-            }, 'titles' => function($query) use ($filter) {
+            }, 'relate_news_titles' => function($query) use ($filter) {
                 $query->where($filter);
             }])->paginate();
 

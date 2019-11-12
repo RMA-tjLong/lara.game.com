@@ -15,8 +15,6 @@ class Controller extends BaseController
      */
     public function __construct(Request $request)
     {
-        parent::__construct($request);
-
     	$this->entity_code = strtolower(preg_replace('~Controller(?!.*Controller)~', '', class_basename($this)));
 
         view()->composer(['modules.*'], function (View $view) {

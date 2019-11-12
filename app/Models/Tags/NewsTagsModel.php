@@ -8,8 +8,8 @@ class NewsTagsModel extends Model
 {
     protected $table = 'news_tags';
 
-    public function tag_titles()
+    public function relate_news_tag_titles()
     {
-        return $this->hasMany('App\Models\Tags\NewsTagTitlesModel', 'news_tag_id', 'id');
+        return $this->hasMany(\App\Models\Tags\NewsTagTitlesModel::class, 'news_tag_id', 'id');
     }
 }

@@ -62,7 +62,7 @@ const NewsContext = {
             url         : $.compileTemplateRoute().apis.news,
             type        : 'GET',
             data        : {
-                'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src),
+                'lang'  : $.parseParams($('script[src]')[$('script[src]').length - 1].src).lang,
                 'page'  : page
             },
             dataType    : 'json',

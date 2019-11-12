@@ -8,15 +8,37 @@ use App\Models\Tags\NewsTagsModel;
 
 class NewsController extends Controller
 {
+    protected $news_tags;
 
     public function __construct(Request $request)
     {
         parent::__construct($request);
+    }
 
-        $news_tags = NewsTagsModel::with('tag_titles')
-                ->orderByDesc('sort')
-                ->get()->toArray();
-        print_r($news_tags);exit;
+    public function beforeAction()
+    {
+        // 读取频道并分类
+        $this->setLocaleId();
+        $locale_id = $this->locale_id;
+        $news_tags = NewsTagsModel::with(['relate_news_tag_titles' => function($query) use ($locale_id) {
+            $query->where('locale_id', $locale_id);
+        }])
+            ->orderByDesc('sort')
+            ->get();
+        $arr = [
+            'comprehensive' => [],
+            'others' => []
+        ];
+
+        foreach ($news_tags as $i => $news_tag) {
+            if ($news_tag['is_comprehensive']) {
+                $arr['comprehensive'][] = $news_tag;
+            } else {
+                $arr['others'][] = $news_tag;
+            }
+        }
+
+        $this->news_tags = $arr;
     }
 
     /**
@@ -26,7 +48,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('modules.' . $this->entity_code . '.index');
+        return view('modules.' . $this->entity_code . '.index', [
+            'news_tags' => $this->news_tags,
+        ]);
     }
 
     /**

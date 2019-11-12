@@ -135,12 +135,26 @@
                         <div class="news-block">
                             <div class="header">{{ __('language.news.channels') }}</div>
                             <div class="content">
-                                <a class="bar" href="#">全部频道</a>
-                                <a class="bar active" href="#">全部频道</a>
-                                <a class="bar" href="#">全部频道</a>
+                                @if ($news_tags['others'])
+                                    @foreach ($news_tags['others'] as $tag)
+                                        @if ($tag['relate_news_tag_titles']->count())
+                                        <a class="bar @if ($tag->code == request()->get('tag')) active @endif"
+                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
+                                        >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
+                                        @endif
+                                    @endforeach
+                                @endif
 
-                                <div class="sub-channel">{{ __('language.news.comprehensive_news') }}</div>
-                                <a class="bar" href="#">测试频道</a>
+                                @if ($news_tags['comprehensive'])
+                                    <div class="sub-channel">{{ __('language.news.comprehensive_news') }}</div>
+                                    @foreach ($news_tags['comprehensive'] as $tag)
+                                        @if ($tag['relate_news_tag_titles']->count())
+                                        <a class="bar @if ($tag->code == request()->get('tag')) active @endif"
+                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
+                                        >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
 

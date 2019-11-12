@@ -80,7 +80,7 @@
                                 {{ __('language.common.change_lang') }}<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                @foreach($languages as $lang)
+                                @foreach ($languages as $lang)
                                     <li><a href="{{ url('lang/' . $lang->code) }}">{{ $lang->name }}</a></li>
                                 @endforeach
                             </ul>
