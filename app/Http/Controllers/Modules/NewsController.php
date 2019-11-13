@@ -45,8 +45,14 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+//        $tag_code = $request->input('tag');
+//        $tag = NewsTagsModel::relate(['relate_news_tag_titles'], ['locale_id' => $this->locale_id])
+//            ->where('code', 'test')
+//            ->get();
+//        print_r($tag);exit;
+
         return view('modules.' . $this->entity_code . '.index', [
             'news_tags' => $this->news_tags,
         ]);
