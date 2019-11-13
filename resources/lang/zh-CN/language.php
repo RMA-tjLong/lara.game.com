@@ -52,11 +52,6 @@ return [
         'reset_password_3rd_line'       => '在地址栏复制并粘贴以下链接： ',
     ],
 
-    'filters' => [
-        'archive'       => '存档',
-        'archive_year'  => '存档年份',
-    ],
-
     'footer' => [
         'mine'          => '我的',
         'news'          => '新闻',
@@ -71,6 +66,11 @@ return [
         'change_bg'     => '更换背景',
         'to_top'        => '回到顶部',
         'search'        => '搜索你想要的'
+    ],
+
+    'filters' => [
+        'archive'       => '存档',
+        'archive_year'  => '存档年份',
     ],
 
     'months' => [
