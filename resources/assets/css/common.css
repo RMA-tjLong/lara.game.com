@@ -607,3 +607,56 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
 .share a:first-child {
     margin-left: 15px;
 }
+
+/* 列表页筛选栏 */
+.filters-block {
+    margin-bottom: 16px;
+}
+.filters-block .header {
+    background: rgba( 255, 255, 255, 0.1);
+    padding: 4px;
+    color: var(--global-context-color);
+    font-size: 12px;
+    font-weight: normal;
+}
+.filters-block .content {
+    border: 1px solid rgba( 255, 255, 255, 0.1);
+    border-radius: 2px;
+    padding: 4px 2px 4px 4px;
+    font-size: 12px;
+}
+.filters-block .content .bar {
+    padding-left: 12px;
+    display: block;
+    color: #9fbbcb!important;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 28px;
+    transition: color 0.5s;
+}
+.filters-block .content .bar:hover {
+    color: #fff!important;
+}
+.filters-block .content .bar.active {
+    background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+    color: #fff!important;
+    border-radius: 1px;
+}
+.filters-block .content .sub-channel {
+    font-size: 11px;
+    color: var(--global-context-dark-color);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+.filters-block .content .sub-channel:first-of-type {
+    margin-top: 0px;
+}
+.filters-block .content a:not(.bar) {
+    color: #B0AEAC!important;
+    margin-right: 7px;
+    word-break: keep-all;
+}
+.filters-block .content a:not(.bar).active {
+    color: #fff!important;
+}

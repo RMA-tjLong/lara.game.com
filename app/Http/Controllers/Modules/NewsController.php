@@ -23,16 +23,17 @@ class NewsController extends Controller
         $news_tags = NewsTagsModel::relate(['relate_news_tag_titles'], ['locale_id' => $this->locale_id])
             ->orderByDesc('sort')
             ->get();
+
         $arr = [
             'comprehensive' => [],
-            'others' => []
+            'normal' => [],
         ];
 
         foreach ($news_tags as $i => $news_tag) {
             if ($news_tag['is_comprehensive']) {
                 $arr['comprehensive'][] = $news_tag;
             } else {
-                $arr['others'][] = $news_tag;
+                $arr['normal'][] = $news_tag;
             }
         }
 
@@ -52,7 +53,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * 根据 ID 单独显示某篇新闻，主要用于分享页回调跳转
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

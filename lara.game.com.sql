@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : docker-mysql
+Source Server         : vagrant-erp
 Source Server Version : 50727
-Source Host           : localhost:3306
-Source Database       : lara.game.com
+Source Host           : 192.168.0.222:3306
+Source Database       : web.test.com
 
 Target Server Type    : MYSQL
 Target Server Version : 50727
 File Encoding         : 65001
 
-Date: 2019-11-10 14:47:32
+Date: 2019-11-13 18:02:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,8 +33,8 @@ CREATE TABLE `game_titles` (
 -- ----------------------------
 -- Records of game_titles
 -- ----------------------------
-INSERT INTO `game_titles` VALUES ('1', '1', '1', 'Zh-cn_Game_titles', '2019-11-05 13:51:47', null, null);
-INSERT INTO `game_titles` VALUES ('2', '1', '2', 'En_Game_titles', '2019-11-05 13:51:47', null, null);
+INSERT INTO `game_titles` VALUES ('1', '1', '1', '中文 标题', '2019-11-05 13:51:47', null, null);
+INSERT INTO `game_titles` VALUES ('2', '1', '2', 'eng title', '2019-11-05 13:51:47', null, null);
 
 -- ----------------------------
 -- Table structure for games
@@ -127,7 +127,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -147,6 +147,8 @@ INSERT INTO `migrations` VALUES ('49', '2019_11_01_082029_create_games_table', '
 INSERT INTO `migrations` VALUES ('50', '2019_11_08_033507_create_news_contents_table', '1');
 INSERT INTO `migrations` VALUES ('51', '2019_11_08_034407_create_news_titles_table', '1');
 INSERT INTO `migrations` VALUES ('52', '2019_11_08_035710_create_game_titles_table', '1');
+INSERT INTO `migrations` VALUES ('61', '2019_11_11_090844_update_news_tags_table_add_code_and_is_comprehensive', '2');
+INSERT INTO `migrations` VALUES ('62', '2019_11_11_093511_update_news_tags_table_add_sort', '3');
 
 -- ----------------------------
 -- Table structure for news
@@ -186,10 +188,10 @@ CREATE TABLE `news_contents` (
 -- ----------------------------
 -- Records of news_contents
 -- ----------------------------
-INSERT INTO `news_contents` VALUES ('1', '1', '1', 'Zh-cn_CONTENT', '2019-11-06 13:42:52', null, null);
-INSERT INTO `news_contents` VALUES ('2', '1', '2', 'En_CONTENT', '2019-11-06 13:42:52', null, null);
-INSERT INTO `news_contents` VALUES ('3', '2', '1', 'ZH-cn_content 2', '2019-11-05 13:44:08', null, null);
-INSERT INTO `news_contents` VALUES ('4', '2', '2', 'en_content_2', '2019-11-05 13:44:08', null, null);
+INSERT INTO `news_contents` VALUES ('1', '1', '1', '中文 内容', '2019-11-06 13:42:52', null, null);
+INSERT INTO `news_contents` VALUES ('2', '1', '2', 'eng content', '2019-11-06 13:42:52', null, null);
+INSERT INTO `news_contents` VALUES ('3', '2', '1', '中文 内容2', '2019-11-05 13:44:08', null, null);
+INSERT INTO `news_contents` VALUES ('4', '2', '2', '<img src=\"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/0a5553b61e1df2dff53c059e7c57849378d0c69f.jpg\"><br><br>Behind the scenes at Steam, we create many experimental features with codenames like <i>The Peabody Recommender</i> and<i> Organize Your Steam Library Using Morse Code</i>. For the first time, we\'re giving these works-in-progress a home called <a class=\"bb_link\" href=\"https://store.steampowered.com/labs/\" target=\"_blank\" rel=\"noreferrer\">Steam Labs</a>, where you can interact with them, tell us whether you think they\'re worth pursuing further, and if so, share your thoughts on how they should evolve. <br><br>We\'ve selected three initial experiments to share as we launch the Labs. Each of these is designed to help people find the games they\'ll love.<br><br><b><a class=\"bb_link\" href=\"https://store.steampowered.com/labs/microtrailers\" target=\"_blank\" rel=\"noreferrer\">Micro Trailers</a></b> are lovingly-generated six-second game trailers, arranged on a page so you can digest them all at a glance. Check out our new micro trailer collections for adventure games, RPGs, builders, and more.<br><br><b><a class=\"bb_link\" href=\"https://store.steampowered.com/recommender\" target=\"_blank\" rel=\"noreferrer\">The Interactive Recommender</a></b> looks at your top-played games and uses machine learning to recommend other titles it thinks you\'ll love. Find old classics by directing it toward popular titles released in the past ten years, or discover that diamond-in-the-rough by zeroing in on niche games launched in the past six months.<br><br><b><a class=\"bb_link\" href=\"https://store.steampowered.com/labs/automaticshow\" target=\"_blank\" rel=\"noreferrer\">The Automated Show</a></b> is a half-hour video featuring the latest Steam launches. Leave it on a second monitor while you work, or glue your eyeballs to it and let hundreds of games wash over you.<br><br>So pop on your lab coat, <a class=\"bb_link\" href=\"https://store.steampowered.com/labs\" target=\"_blank\" rel=\"noreferrer\">try the experiments</a>, and then <a class=\"bb_link\" href=\"https://steamcommunity.com/groups/SteamLabs/discussions\" target=\"_blank\" rel=\"noreferrer\">share your feedback</a> to help shape the future of Steam.<br><br>To follow future news and additions to Steam Labs, <a class=\"bb_link\" href=\"https://steamcommunity.com/groups/SteamLabs\" target=\"_blank\" rel=\"noreferrer\">join the Steam Labs Community Group</a>, where we\'ll share announcements and updates.<br><br>Cheers!<br>-The Steam Team		<div style=\"clear: both;\"></div>', '2019-11-05 13:44:08', null, null);
 
 -- ----------------------------
 -- Table structure for news_tag_titles
@@ -204,11 +206,13 @@ CREATE TABLE `news_tag_titles` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间，如果存在则表示该条数据已被删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of news_tag_titles
 -- ----------------------------
+INSERT INTO `news_tag_titles` VALUES ('1', '1', '1', '测试', '2019-11-11 17:32:35', null, null);
+INSERT INTO `news_tag_titles` VALUES ('2', '1', '2', 'test', '2019-11-11 17:32:35', null, null);
 
 -- ----------------------------
 -- Table structure for news_tags
@@ -219,12 +223,16 @@ CREATE TABLE `news_tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL COMMENT '删除时间，如果存在则表示该条数据已被删除',
+  `code` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '新闻标签唯一代码标识',
+  `is_comprehensive` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否为综合新闻',
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of news_tags
 -- ----------------------------
+INSERT INTO `news_tags` VALUES ('1', '2019-11-13 14:36:52', null, null, 'test', '1', '0');
 
 -- ----------------------------
 -- Table structure for news_titles
@@ -244,10 +252,10 @@ CREATE TABLE `news_titles` (
 -- ----------------------------
 -- Records of news_titles
 -- ----------------------------
-INSERT INTO `news_titles` VALUES ('1', '1', '1', 'Zh-cn_TITLE', '2019-11-06 13:42:52', null, null);
-INSERT INTO `news_titles` VALUES ('2', '1', '2', 'En_TITLE', '2019-11-06 13:42:52', null, null);
-INSERT INTO `news_titles` VALUES ('3', '2', '1', 'zh-cn_ title 2', '2019-11-05 13:44:08', null, null);
-INSERT INTO `news_titles` VALUES ('4', '2', '2', 'en_title 2', '2019-11-05 13:44:08', null, null);
+INSERT INTO `news_titles` VALUES ('1', '1', '1', '中文 标题1', '2019-11-06 13:42:52', null, null);
+INSERT INTO `news_titles` VALUES ('2', '1', '2', 'eng title1', '2019-11-06 13:42:52', null, null);
+INSERT INTO `news_titles` VALUES ('3', '2', '1', '中文 标题2', '2019-11-05 13:44:08', null, null);
+INSERT INTO `news_titles` VALUES ('4', '2', '2', 'eng title2', '2019-11-05 13:44:08', null, null);
 
 -- ----------------------------
 -- Table structure for news_to_tags
