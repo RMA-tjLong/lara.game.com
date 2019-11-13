@@ -10,6 +10,7 @@ class NewsTagsModel extends Model
 
     public function relate_news_tag_titles()
     {
-        return $this->hasMany(\App\Models\Tags\NewsTagTitlesModel::class, 'news_tag_id', 'id');
+        return $this->hasMany(\App\Models\Tags\NewsTagTitlesModel::class, 'news_tag_id', 'id')
+            ->where('locale_id', self::$locale_id);
     }
 }

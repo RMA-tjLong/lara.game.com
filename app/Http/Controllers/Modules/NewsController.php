@@ -17,12 +17,10 @@ class NewsController extends Controller
 
     public function beforeAction()
     {
+        parent::beforeAction();
+
         // 读取频道并分类
-        $this->setLocaleId();
-        $locale_id = $this->locale_id;
-        $news_tags = NewsTagsModel::with(['relate_news_tag_titles' => function($query) use ($locale_id) {
-            $query->where('locale_id', $locale_id);
-        }])
+        $news_tags = NewsTagsModel::relate(['relate_news_tag_titles'], ['locale_id' => $this->locale_id])
             ->orderByDesc('sort')
             ->get();
         $arr = [

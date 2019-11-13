@@ -15,11 +15,13 @@ class NewsModel extends Model
 
     public function relate_news_titles()
     {
-        return $this->hasMany(\App\Models\Modules\NewsTitlesModel::class, 'news_id', 'id');
+        return $this->hasMany(\App\Models\Modules\NewsTitlesModel::class, 'news_id', 'id')
+            ->where('locale_id', self::$locale_id);
     }
 
     public function relate_news_contents()
     {
-        return $this->hasMany(\App\Models\Modules\NewsContentsModel::class, 'news_id', 'id');
+        return $this->hasMany(\App\Models\Modules\NewsContentsModel::class, 'news_id', 'id')
+            ->where('locale_id', self::$locale_id);
     }
 }

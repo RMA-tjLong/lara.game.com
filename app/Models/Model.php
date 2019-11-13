@@ -9,6 +9,9 @@ class Model extends BaseModel
 {
     use SoftDeletes;
 
+    protected $dates = ['deleted_at'];
+    protected static $locale_id;
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -17,5 +20,23 @@ class Model extends BaseModel
         $this->setPerPage(2);
     }
 
-    protected $dates = ['deleted_at'];
+    /**
+     * Begin querying a model with eager loading.
+     *
+     * @param  array|string  $relations
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+     */
+    public static function relate($relations, $params = [])
+    {
+        self::parseRelateParams($params);
+
+        return (new static)->newQuery()->with(
+            is_string($relations) ? func_get_args() : $relations
+        );
+    }
+
+    private static function parseRelateParams($params)
+    {
+        self::$locale_id = $params['locale_id'] ?? '';
+    }
 }
