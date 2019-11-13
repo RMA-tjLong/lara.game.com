@@ -30,7 +30,10 @@ class Controller extends BaseController
         return $return;
     }
 
-    public function setLocaleId()
+    /**
+     * 在构造后的预处理
+     */
+    public function beforeAction()
     {
         $lang = request()->input('lang') ? : \App::getLocale();
         $this->locale_id = LanguagesModel::where('code', $lang)->first()->id;

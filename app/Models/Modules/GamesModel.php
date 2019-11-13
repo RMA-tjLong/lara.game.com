@@ -10,6 +10,7 @@ class GamesModel extends Model
 
     public function relate_game_titles()
     {
-        return $this->hasMany(\App\Models\Modules\GameTitlesModel::class, 'game_id', 'id');
+        return $this->hasMany(\App\Models\Modules\GameTitlesModel::class, 'game_id', 'id')
+            ->where('locale_id', self::$locale_id);
     }
 }
