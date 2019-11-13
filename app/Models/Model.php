@@ -30,6 +30,7 @@ class Model extends BaseModel
     {
         self::parseRelateParams($params);
 
+        // TODO:当 $params 为字符串时出现bug
         return (new static)->newQuery()->with(
             is_string($relations) ? func_get_args() : $relations
         );
