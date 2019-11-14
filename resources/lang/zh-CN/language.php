@@ -89,6 +89,7 @@ return [
     ],
 
     'news' => [
+        'news'                  => '新闻',
         'all'                   => '所有新闻',
         'channels'              => '频道',
         'comprehensive_news'    => '综合新闻',

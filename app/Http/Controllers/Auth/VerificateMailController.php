@@ -80,7 +80,7 @@ class VerificateMailController
 
         $users->verification_token = null;
         $users->verified = true;
-        $users->verified_at = Carbon::now();
+        $users->verified_at = Carbon::now('Asia/Shanghai');
         $users->save();
 
         session()->put('success', __('language.warning.validate_success'));

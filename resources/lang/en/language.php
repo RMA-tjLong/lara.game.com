@@ -89,6 +89,7 @@ return [
     ],
 
     'news' => [
+        'news'                  => 'News',
         'all'                   => 'All news',
         'channels'              => 'Channels',
         'comprehensive_news'    => 'Comprehensive news',
