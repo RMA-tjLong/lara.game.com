@@ -507,6 +507,15 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     padding: 20px 15px 0;
 }
 
+/* 动态加载分页时渐变显示 */
+@keyframes page-list {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.page-list {
+    animation: page-list 1s;
+}
+
 /* 页面左侧工具栏 */
 #left-tools {
     position: fixed;
