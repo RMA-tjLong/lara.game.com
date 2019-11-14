@@ -92,7 +92,7 @@
                                     @foreach ($news_tags['normal'] as $tag)
                                         @if ($tag['relate_news_tag_titles']->count())
                                         <a class="bar @if ($tag->code == request()->query('tag')) active @endif"
-                                           href="{{ route('news.index', array_merge(request()->query(), ['tag' => $tag->code])) }}"
+                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
                                         >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
                                         @endif
                                     @endforeach
@@ -103,7 +103,7 @@
                                     @foreach ($news_tags['comprehensive'] as $tag)
                                         @if ($tag['relate_news_tag_titles']->count())
                                         <a class="bar @if ($tag->code == request()->query('tag')) active @endif"
-                                           href="{{ route('news.index', array_merge(request()->query(), ['tag' => $tag->code])) }}"
+                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
                                         >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
                                         @endif
                                     @endforeach
