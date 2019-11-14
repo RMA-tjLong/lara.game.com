@@ -20,7 +20,7 @@ class NewsController extends Controller
         parent::beforeAction();
 
         // 读取频道并分类
-        $news_tags = NewsTagsModel::relate(['relate_news_tag_titles'], ['locale_id' => $this->locale_id])
+        $news_tags = NewsTagsModel::with(['relate_news_tag_titles'])
             ->orderByDesc('sort')
             ->get();
 
@@ -47,14 +47,18 @@ class NewsController extends Controller
      */
     public function index(Request $request)
     {
-//        $tag_code = $request->input('tag');
-//        $tag = NewsTagsModel::relate(['relate_news_tag_titles'], ['locale_id' => $this->locale_id])
-//            ->where('code', 'test')
-//            ->get();
-//        print_r($tag);exit;
+        if ($news_tag_code = $request->input('tag')) {
+            $news_tags = NewsTagsModel::where(['code' => $news_tag_code])
+                ->first();
+
+            if ($news_tags && $news_tags->relate_news_tag_titles->count()) {
+                $page_title = $news_tags->relate_news_tag_titles[0]->title;
+            }
+        }
 
         return view('modules.' . $this->entity_code . '.index', [
-            'news_tags' => $this->news_tags,
+            'news_tags'     => $this->news_tags,
+            'page_title'    => $page_title ?? __('language.news.all'),
         ]);
     }
 
