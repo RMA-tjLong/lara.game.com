@@ -39,7 +39,7 @@ const NewsContext = {
                 let res = data.data.data;
 
                 if (res.length) {
-                    let str = '';
+                    let str = '<div class="page-list">';
 
                     res.forEach(function(item) {
                         if (!item.relate_games || !item.relate_games.relate_game_titles.length || !item.relate_news_contents.length || !item.relate_news_titles.length) {
@@ -63,6 +63,7 @@ const NewsContext = {
                                 '</div>';
                     });
 
+                    str += '</div>';
                     NewsContext.element.find('#news').append(str);
                 } else {
                     NewsContext.element.off('scroll');
