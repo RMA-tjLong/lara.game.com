@@ -14706,7 +14706,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     position: absolute;
     left: 52px;
     top: 0;
-    width: 160px;
+    width: 200px;
     height: 40px;
     background-color: var(--global-active-light);
     display: none;
@@ -14723,7 +14723,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     left: 5px;
     border: 1px solid #eee;
     height: 30px;
-    width: 150px;
+    width: 190px;
     padding: 0 7px;
 }
 
