@@ -14685,6 +14685,7 @@ fieldset[disabled] .navbar-primary .btn-link:focus {
     line-height: 40px;
     background-color: var(--global-active-light);
     color: #fff;
+    white-space: nowrap;
 }
 #left-tools > li:not(.search-tool):hover:before, #left-tools > li.search-tool .search-box:before {
     position: absolute;
