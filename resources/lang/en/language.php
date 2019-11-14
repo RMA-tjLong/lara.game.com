@@ -98,4 +98,8 @@ return [
     'share' => [
         'share_to'      => 'Share to'
     ],
+
+    'others' => [
+        'home'          => 'Home'
+    ],
 ];

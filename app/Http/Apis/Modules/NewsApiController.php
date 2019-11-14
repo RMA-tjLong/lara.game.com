@@ -35,6 +35,10 @@ class NewsApiController extends Controller
             }
         }
 
+        if (isset($input['gameid'])) {
+            $news = $news->where('game_id', $input['gameid']);
+        }
+
         $news = $news->paginate();
 
         return ajax_return_success($news);

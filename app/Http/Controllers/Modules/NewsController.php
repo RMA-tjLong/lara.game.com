@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Modules;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tags\NewsTagsModel;
+use App\Models\Modules\GamesModel;
 
 class NewsController extends Controller
 {
@@ -56,9 +57,20 @@ class NewsController extends Controller
             }
         }
 
+        if ($game_id = $request->input('gameid')) {
+            $game = GamesModel::with('relate_game_titles')
+                ->find($game_id);
+
+            if ($game && $game->relate_game_titles->count()) {
+                $game_title = $game->relate_game_titles[0]->title;
+            }
+        }
+
         return view('modules.' . $this->entity_code . '.index', [
             'news_tags'     => $this->news_tags,
             'page_title'    => $page_title ?? __('language.news.all'),
+            'param_game_id' => $game_id ? ['gameid' => $game_id] : [],
+            'game_title'    => $game_title ?? ''
         ]);
     }
 
