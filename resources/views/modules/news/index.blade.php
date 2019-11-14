@@ -75,7 +75,7 @@
                     <a href="#">新闻</a>
                 @endslot
 
-                @slot('page_title', '所有新闻')
+                @slot('page_title', $page_title)
             @endcomponent
 
             @component('components.context-content')

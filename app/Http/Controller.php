@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Models\LanguagesModel;
+use App\Models\Model;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -37,5 +38,6 @@ class Controller extends BaseController
     {
         $lang = request()->input('lang') ? : \App::getLocale();
         $this->locale_id = LanguagesModel::where('code', $lang)->first()->id;
+        Model::$locale_id = $this->locale_id;
     }
 }
