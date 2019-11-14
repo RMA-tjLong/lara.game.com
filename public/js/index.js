@@ -24,10 +24,22 @@ const SearchBox = {
     }
 };
 
+const ToTopTool = {
+    'element'   : $('#left-tools .to-top-tool'),
+    'events'    : ['click'],
+
+    'clickListener' : function() {
+        this.element.on('click', function() {
+            $('#context').animate({ scrollTop : 0 }, 500);
+        });
+    }
+};
+
 const LeftTools = {
     'elements' : [
         SearchTool,
-        SearchBox
+        SearchBox,
+        ToTopTool
     ]
 };
 
