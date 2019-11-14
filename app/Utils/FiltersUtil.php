@@ -8,10 +8,8 @@ class FiltersUtil
 {
     public static function parseFilters($data = [])
     {
-        $data = [
-            'time'  => self::parseArchives($data),
-            'tag'   => $data['tag'] ?? '',
-        ];
+        $data['time'] = self::parseArchives($data);
+        $data['tag'] = $data['tag'] ?? '';
 
         return $data;
     }

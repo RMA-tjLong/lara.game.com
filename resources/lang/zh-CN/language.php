@@ -98,4 +98,8 @@ return [
     'share' => [
         'share_to'      => '分享到'
     ],
+
+    'others' => [
+        'home'          => '首页'
+    ],
 ];

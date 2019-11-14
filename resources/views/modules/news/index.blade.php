@@ -71,9 +71,9 @@
         <div class="container">
             @component('components.context-header')
                 @slot('bread_crumbs')
-{{--                TODO: 当为指定产品的新闻时需要重新定义路由， 同时此处应设置对应的链接， 建议设置导航方法统一处理   --}}
-                    <a href="#">所有产品</a> &gt;
-                    <a href="#">{{ __('language.news.news') }}</a>
+                    <a href="{{ route('shop.index') }}">{{ __('language.others.home') }}</a> &gt;
+                    <a href="{{ route('news.index') }}">{{ __('language.news.news') }}</a>
+                    @if ($game_title) > <a href="{{ route('news.index', $param_game_id) }}">{{ $game_title }}</a> @endif
                 @endslot
 
                 @slot('page_title', $page_title)
@@ -87,12 +87,12 @@
                         <div class="filters-block">
                             <div class="header">{{ __('language.news.channels') }}</div>
                             <div class="content">
-                                <a class="bar @if (!request()->query('tag')) active @endif" href="{{ route('news.index') }}">{{ __('language.news.all') }}</a>
+                                <a class="bar @if (!request()->query('tag')) active @endif" href="{{ route('news.index', $param_game_id) }}">{{ __('language.news.all') }}</a>
                                 @if ($news_tags['normal'])
                                     @foreach ($news_tags['normal'] as $tag)
                                         @if ($tag['relate_news_tag_titles']->count())
                                         <a class="bar @if ($tag->code == request()->query('tag')) active @endif"
-                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
+                                           href="{{ route('news.index', array_merge($param_game_id, ['tag' => $tag->code])) }}"
                                         >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
                                         @endif
                                     @endforeach
@@ -103,7 +103,7 @@
                                     @foreach ($news_tags['comprehensive'] as $tag)
                                         @if ($tag['relate_news_tag_titles']->count())
                                         <a class="bar @if ($tag->code == request()->query('tag')) active @endif"
-                                           href="{{ route('news.index', ['tag' => $tag->code]) }}"
+                                           href="{{ route('news.index', array_merge($param_game_id, ['tag' => $tag->code])) }}"
                                         >{{ $tag['relate_news_tag_titles'][0]->title }}</a>
                                         @endif
                                     @endforeach
