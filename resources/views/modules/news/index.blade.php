@@ -71,8 +71,9 @@
         <div class="container">
             @component('components.context-header')
                 @slot('bread_crumbs')
+{{--                TODO: 当为指定产品的新闻时需要重新定义路由， 同时此处应设置对应的链接， 建议设置导航方法统一处理   --}}
                     <a href="#">所有产品</a> &gt;
-                    <a href="#">新闻</a>
+                    <a href="#">{{ __('language.news.news') }}</a>
                 @endslot
 
                 @slot('page_title', $page_title)
