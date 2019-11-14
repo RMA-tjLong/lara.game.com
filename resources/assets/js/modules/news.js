@@ -48,7 +48,7 @@ const NewsContext = {
 
                         str +=  '<div class="news-hr"></div>' +
                                 '<div id="news_' + item.id + '">' +
-                                    '<div class="news-list steam_announce">' +
+                                    '<div class="news-list">' +
                                         '<img class="capsule" src="' + item.relate_games.head_img_url + '">' +
                                         '<div class="headline">' +
                                             '<div class="date">' + item.created_at + '</div>' +
