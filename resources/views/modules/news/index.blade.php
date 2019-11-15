@@ -71,7 +71,7 @@
         <div class="container">
             @component('components.context-header')
                 @slot('bread_crumbs')
-                    <a href="{{ route('shop.index') }}">{{ __('language.others.home') }}</a> &gt;
+                    <a href="{{ route('shop.index') }}">{{ __('language.common.home') }}</a> &gt;
                     <a href="{{ route('news.index') }}">{{ __('language.news.news') }}</a>
                     @if ($game_title) > <a href="{{ route('news.index', $param_game_id) }}">{{ $game_title }}</a> @endif
                 @endslot

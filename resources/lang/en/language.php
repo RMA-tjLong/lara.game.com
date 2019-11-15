@@ -6,11 +6,10 @@ return [
 		'set_up'		=> 'Set up',
 		'log_out'		=> 'Log out',
 		'change_lang'	=> 'Change language',
-		'zh_cn'			=> 'Simple Chinese',
-		'en'			=> 'English',
         'about_us'      => 'About us',
         'comments'      => 'Comments',
         'verificate'    => 'Verificate',
+        'home'          => 'Home'
 	],
 
 	'auth' => [
@@ -97,9 +96,5 @@ return [
 
     'share' => [
         'share_to'      => 'Share to'
-    ],
-
-    'others' => [
-        'home'          => 'Home'
     ],
 ];
