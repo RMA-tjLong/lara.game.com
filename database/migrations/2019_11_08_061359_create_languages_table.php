@@ -17,7 +17,6 @@ class CreateLanguagesTable extends Migration
             $table->increments('id');
             $table->string('name', 32)->comment('语言名');
             $table->string('code', 16)->comment('语言代码');
-            $table->tinyInteger('is_enabled')->default(1)->comment('是否开启');
             $table->tinyInteger('is_default')->default(0)->comment('是否默认');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable()->comment('删除时间，如果存在则表示该条数据已被删除');

@@ -6,11 +6,10 @@ return [
 		'set_up'		=> '注册',
 		'log_out'		=> '登出',
 		'change_lang'	=> '切换语言',
-		'zh_cn'			=> '简体中文',
-		'en'			=> '英语',
         'about_us'      => '关于我们',
         'comments'      => '留言',
         'verificate'    => '验证',
+        'home'          => '首页'
 	],
 
 	'auth' => [
@@ -97,9 +96,5 @@ return [
 
     'share' => [
         'share_to'      => '分享到'
-    ],
-
-    'others' => [
-        'home'          => '首页'
     ],
 ];
