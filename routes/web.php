@@ -49,3 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
     // 新闻
     Route::resource('modules/news', 'Modules\NewsController', ['only' => ['index', 'show']]);
 });
+
+
+// 临时 生成语言文件
+Route::get('test-languages', 'Test\TestController@index');
