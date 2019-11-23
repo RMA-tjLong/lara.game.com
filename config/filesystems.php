@@ -63,6 +63,11 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'lang' => [
+            'driver' => 'local',
+            'root' => resource_path('lang'),
+        ],
+
     ],
 
 ];

@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-use App\Models\LanguagesModel;
+use App\Models\Languages\LanguagesModel;
 use App\Models\Model;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

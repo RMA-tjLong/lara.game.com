@@ -1,7 +1,7 @@
 <?php
 namespace App\Services;
 
-use App\Models\LanguagesModel;
+use App\Models\Languages\LanguagesModel;
 use Illuminate\View\View;
 
 class ComposerService
