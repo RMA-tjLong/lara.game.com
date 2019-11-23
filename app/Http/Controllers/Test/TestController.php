@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TestController
 {
-    public function index()
+    public function createLanguageFiles()
     {
         $language_configs = LanguageConfigsModel::with([
             'relate_languages:id,code',
@@ -31,7 +31,9 @@ class TestController
         }
 
         foreach (array_reverse($arr) as $k => $val) {
-            Storage::put($k . '.json', json_encode($val));
+            Storage::disk('lang')->put($k . '.json', json_encode($val));
         }
+
+        exit('语言文件生成成功');
     }
 }

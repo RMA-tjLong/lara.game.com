@@ -51,5 +51,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-// 临时 生成语言文件
-Route::get('test-languages', 'Test\TestController@index');
+// 临时
+Route::group(['prefix' => 'test'], function() {
+    // 生成语言文件
+    Route::get('create-language-files', 'Test\TestController@createLanguageFiles');
+});
